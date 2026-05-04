@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Percentage Calculator — Free Online % Calculator | ToolsRhino</title>
+  <meta name="description" content="Free online percentage calculator. Calculate percentages, discounts, tax, markup, tip and percentage change instantly. No signup required." />
+  <meta name="keywords" content="percentage calculator, percent calculator, discount calculator, tax calculator, online percentage" />
+  <link rel="canonical" href="https://toolsrhino.com/tools/percentage-calculator.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root { --bg:#0a0a0a; --surface:#111111; --border:#222222; --accent:#ff6b00; --accent2:#ff9a00; --text:#f0f0f0; --muted:#888888; }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif; font-weight:300; }
+    nav { display:flex; align-items:center; justify-content:space-between; padding:1.2rem 4rem; background:rgba(10,10,10,0.95); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:100; }
+    .logo { display:flex; align-items:center; gap:0.6rem; text-decoration:none; }
+    .logo-icon { width:32px; height:32px; background:var(--accent); border-radius:7px; display:flex; align-items:center; justify-content:center; font-size:1rem; }
+    .logo-text { font-family:'Syne',sans-serif; font-weight:800; font-size:1.1rem; color:var(--text); }
+    .logo-text span { color:var(--accent); }
+    .back-link { color:var(--muted); text-decoration:none; font-size:0.9rem; }
+    .back-link:hover { color:var(--text); }
+    .page { max-width:800px; margin:0 auto; padding:3rem 2rem 6rem; }
+    .page-header { margin-bottom:2.5rem; }
+    .tool-badge { display:inline-block; background:rgba(255,107,0,0.1); border:1px solid rgba(255,107,0,0.2); color:var(--accent2); padding:0.3rem 0.8rem; border-radius:6px; font-size:0.75rem; font-weight:500; margin-bottom:1rem; }
+    .page-header h1 { font-family:'Syne',sans-serif; font-size:2.5rem; font-weight:800; letter-spacing:-1px; margin-bottom:0.6rem; }
+    .page-header p { color:var(--muted); font-size:1rem; line-height:1.6; }
+    .calc-card { background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:2rem; margin-bottom:1.2rem; }
+    .calc-card h3 { font-family:'Syne',sans-serif; font-weight:700; font-size:1rem; margin-bottom:1.2rem; color:var(--accent2); }
+    .input-row { display:flex; gap:1rem; align-items:flex-end; flex-wrap:wrap; }
+    .input-group { flex:1; min-width:120px; }
+    .input-group label { display:block; font-size:0.8rem; color:var(--muted); margin-bottom:0.4rem; }
+    .input-group input {
+      width:100%; padding:0.75rem 1rem;
+      background:var(--bg); border:1px solid var(--border);
+      border-radius:8px; color:var(--text);
+      font-family:'DM Sans',sans-serif; font-size:1rem;
+      outline:none; transition:border-color 0.2s;
+    }
+    .input-group input:focus { border-color:rgba(255,107,0,0.4); }
+    .equals { font-size:1.5rem; color:var(--muted); padding-bottom:0.5rem; }
+    .result-box {
+      background:rgba(255,107,0,0.08);
+      border:1px solid rgba(255,107,0,0.2);
+      border-radius:10px; padding:1rem 1.5rem;
+      margin-top:1rem;
+      display:flex; align-items:center; justify-content:space-between;
+    }
+    .result-box .result-label { font-size:0.85rem; color:var(--muted); }
+    .result-box .result-value { font-family:'Syne',sans-serif; font-size:1.8rem; font-weight:800; color:var(--accent); }
+    .seo-content { margin-top:4rem; padding-top:3rem; border-top:1px solid var(--border); }
+    .seo-content h2 { font-family:'Syne',sans-serif; font-size:1.4rem; font-weight:700; margin-bottom:0.8rem; }
+    .seo-content p { color:var(--muted); line-height:1.8; margin-bottom:1rem; font-size:0.95rem; }
+    footer { padding:2rem 4rem; border-top:1px solid var(--border); margin-top:4rem; }
+    .footer-inner { max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }
+    .footer-links { display:flex; gap:2rem; }
+    .footer-links a { color:var(--muted); text-decoration:none; font-size:0.85rem; }
+    .footer-copy { color:var(--muted); font-size:0.82rem; }
+    @media(max-width:600px){ nav{padding:1rem 1.5rem;} .page{padding:2rem 1.2rem 4rem;} .page-header h1{font-size:1.8rem;} footer{padding:2rem 1.5rem;} .input-row{flex-direction:column;} }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="../index.html" class="logo"><div class="logo-icon">🦏</div><span class="logo-text">Tools<span>Rhino</span></span></a>
+    <a href="../index.html" class="back-link">← All Tools</a>
+  </nav>
+
+  <div class="page">
+    <div class="page-header">
+      <div class="tool-badge">📊 Calculator</div>
+      <h1>Percentage Calculator</h1>
+      <p>Calculate any percentage instantly — discounts, tax, tips, percentage change and more. All free, no signup needed.</p>
+    </div>
+
+    <!-- CALC 1 -->
+    <div class="calc-card">
+      <h3>📌 What is X% of Y?</h3>
+      <div class="input-row">
+        <div class="input-group">
+          <label>Percentage (%)</label>
+          <input type="number" id="c1p" placeholder="e.g. 20" oninput="calc1()" />
+        </div>
+        <div class="equals">of</div>
+        <div class="input-group">
+          <label>Number</label>
+          <input type="number" id="c1n" placeholder="e.g. 500" oninput="calc1()" />
+        </div>
+      </div>
+      <div class="result-box">
+        <span class="result-label">Result</span>
+        <span class="result-value" id="r1">—</span>
+      </div>
+    </div>
+
+    <!-- CALC 2 -->
+    <div class="calc-card">
+      <h3>📌 X is what % of Y?</h3>
+      <div class="input-row">
+        <div class="input-group">
+          <label>Number (X)</label>
+          <input type="number" id="c2x" placeholder="e.g. 50" oninput="calc2()" />
+        </div>
+        <div class="equals">of</div>
+        <div class="input-group">
+          <label>Total (Y)</label>
+          <input type="number" id="c2y" placeholder="e.g. 200" oninput="calc2()" />
+        </div>
+      </div>
+      <div class="result-box">
+        <span class="result-label">Percentage</span>
+        <span class="result-value" id="r2">—</span>
+      </div>
+    </div>
+
+    <!-- CALC 3 -->
+    <div class="calc-card">
+      <h3>📌 Percentage Change (Increase / Decrease)</h3>
+      <div class="input-row">
+        <div class="input-group">
+          <label>From Value</label>
+          <input type="number" id="c3a" placeholder="e.g. 100" oninput="calc3()" />
+        </div>
+        <div class="equals">→</div>
+        <div class="input-group">
+          <label>To Value</label>
+          <input type="number" id="c3b" placeholder="e.g. 150" oninput="calc3()" />
+        </div>
+      </div>
+      <div class="result-box">
+        <span class="result-label">Change</span>
+        <span class="result-value" id="r3">—</span>
+      </div>
+    </div>
+
+    <!-- CALC 4 -->
+    <div class="calc-card">
+      <h3>📌 Discount Calculator</h3>
+      <div class="input-row">
+        <div class="input-group">
+          <label>Original Price</label>
+          <input type="number" id="c4p" placeholder="e.g. 1200" oninput="calc4()" />
+        </div>
+        <div class="equals">—</div>
+        <div class="input-group">
+          <label>Discount (%)</label>
+          <input type="number" id="c4d" placeholder="e.g. 25" oninput="calc4()" />
+        </div>
+      </div>
+      <div class="result-box">
+        <span class="result-label">Price After Discount</span>
+        <span class="result-value" id="r4">—</span>
+      </div>
+    </div>
+
+    <div class="seo-content">
+      <h2>How to Use the Percentage Calculator</h2>
+      <p>Our free percentage calculator offers four common calculations in one place. Choose the type of calculation you need, enter your numbers, and the result appears instantly. No buttons to click — results update as you type.</p>
+      <p>Use it to calculate discounts while shopping, figure out tax on invoices, calculate tip at a restaurant, or track percentage change in your freelance income month over month.</p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <a href="../index.html" class="logo"><div class="logo-icon">🦏</div><span class="logo-text">Tools<span>Rhino</span></span></a>
+      <div class="footer-links"><a href="../about.html">About</a><a href="../privacy.html">Privacy Policy</a><a href="../contact.html">Contact</a></div>
+      <div class="footer-copy">© 2025 ToolsRhino</div>
+    </div>
+  </footer>
+
+  <script>
+    function calc1() {
+      const p = parseFloat(document.getElementById('c1p').value);
+      const n = parseFloat(document.getElementById('c1n').value);
+      document.getElementById('r1').textContent = (!isNaN(p) && !isNaN(n)) ? ((p/100)*n).toFixed(2) : '—';
+    }
+    function calc2() {
+      const x = parseFloat(document.getElementById('c2x').value);
+      const y = parseFloat(document.getElementById('c2y').value);
+      document.getElementById('r2').textContent = (!isNaN(x) && !isNaN(y) && y !== 0) ? ((x/y)*100).toFixed(2)+'%' : '—';
+    }
+    function calc3() {
+      const a = parseFloat(document.getElementById('c3a').value);
+      const b = parseFloat(document.getElementById('c3b').value);
+      if (!isNaN(a) && !isNaN(b) && a !== 0) {
+        const change = ((b-a)/Math.abs(a)*100).toFixed(2);
+        document.getElementById('r3').textContent = (change > 0 ? '+' : '') + change + '%';
+      } else { document.getElementById('r3').textContent = '—'; }
+    }
+    function calc4() {
+      const p = parseFloat(document.getElementById('c4p').value);
+      const d = parseFloat(document.getElementById('c4d').value);
+      document.getElementById('r4').textContent = (!isNaN(p) && !isNaN(d)) ? (p - (p*d/100)).toFixed(2) : '—';
+    }
+  </script>
+</body>
+</html>

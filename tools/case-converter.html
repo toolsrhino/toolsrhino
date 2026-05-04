@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Converter — Free Online Text Case Changer | ToolsRhino</title>
+  <meta name="description" content="Free online case converter. Convert text to UPPERCASE, lowercase, Title Case, Sentence case, camelCase and more instantly. No signup required." />
+  <meta name="keywords" content="case converter, text case changer, uppercase converter, lowercase converter, title case, sentence case online" />
+  <link rel="canonical" href="https://toolsrhino.com/tools/case-converter.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root { --bg:#0a0a0a; --surface:#111111; --border:#222222; --accent:#ff6b00; --accent2:#ff9a00; --text:#f0f0f0; --muted:#888888; }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif; font-weight:300; }
+    nav { display:flex; align-items:center; justify-content:space-between; padding:1.2rem 4rem; background:rgba(10,10,10,0.95); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:100; }
+    .logo { display:flex; align-items:center; gap:0.6rem; text-decoration:none; }
+    .logo-icon { width:32px; height:32px; background:var(--accent); border-radius:7px; display:flex; align-items:center; justify-content:center; font-size:1rem; }
+    .logo-text { font-family:'Syne',sans-serif; font-weight:800; font-size:1.1rem; color:var(--text); }
+    .logo-text span { color:var(--accent); }
+    .back-link { color:var(--muted); text-decoration:none; font-size:0.9rem; }
+    .back-link:hover { color:var(--text); }
+    .page { max-width:860px; margin:0 auto; padding:3rem 2rem 6rem; }
+    .page-header { margin-bottom:2.5rem; }
+    .tool-badge { display:inline-block; background:rgba(255,107,0,0.1); border:1px solid rgba(255,107,0,0.2); color:var(--accent2); padding:0.3rem 0.8rem; border-radius:6px; font-size:0.75rem; font-weight:500; margin-bottom:1rem; }
+    .page-header h1 { font-family:'Syne',sans-serif; font-size:2.5rem; font-weight:800; letter-spacing:-1px; margin-bottom:0.6rem; }
+    .page-header p { color:var(--muted); font-size:1rem; line-height:1.6; }
+    .converter-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; }
+    .text-box {
+      background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.5rem;
+    }
+    .text-box label { display:block; font-size:0.8rem; color:var(--muted); margin-bottom:0.6rem; font-weight:500; }
+    textarea {
+      width:100%; height:180px; background:var(--bg); border:1px solid var(--border); border-radius:8px;
+      color:var(--text); font-family:'DM Sans',sans-serif; font-size:0.95rem; font-weight:300;
+      line-height:1.6; padding:1rem; resize:vertical; outline:none; transition:border-color 0.2s;
+    }
+    textarea:focus { border-color:rgba(255,107,0,0.4); }
+    textarea::placeholder { color:var(--muted); }
+    .buttons-grid {
+      display:grid; grid-template-columns:repeat(3,1fr); gap:0.7rem; margin:1.5rem 0;
+    }
+    .case-btn {
+      background:var(--surface); border:1px solid var(--border); color:var(--text);
+      padding:0.7rem 0.5rem; border-radius:8px; font-family:'DM Sans',sans-serif;
+      font-size:0.82rem; font-weight:500; cursor:pointer; transition:all 0.2s; text-align:center;
+    }
+    .case-btn:hover { background:var(--accent); border-color:var(--accent); color:white; }
+    .case-btn.active { background:var(--accent); border-color:var(--accent); color:white; }
+    .action-row { display:flex; gap:0.8rem; margin-top:1rem; flex-wrap:wrap; }
+    .btn { padding:0.65rem 1.3rem; border-radius:8px; font-family:'DM Sans',sans-serif; font-size:0.85rem; font-weight:500; cursor:pointer; border:none; transition:all 0.2s; }
+    .btn-accent { background:var(--accent); color:white; }
+    .btn-accent:hover { background:var(--accent2); }
+    .btn-outline { background:transparent; border:1px solid var(--border); color:var(--muted); }
+    .btn-outline:hover { border-color:var(--accent); color:var(--accent); }
+    .seo-content { margin-top:4rem; padding-top:3rem; border-top:1px solid var(--border); }
+    .seo-content h2 { font-family:'Syne',sans-serif; font-size:1.4rem; font-weight:700; margin-bottom:0.8rem; }
+    .seo-content p { color:var(--muted); line-height:1.8; margin-bottom:1rem; font-size:0.95rem; }
+    footer { padding:2rem 4rem; border-top:1px solid var(--border); margin-top:4rem; }
+    .footer-inner { max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }
+    .footer-links { display:flex; gap:2rem; }
+    .footer-links a { color:var(--muted); text-decoration:none; font-size:0.85rem; }
+    .footer-copy { color:var(--muted); font-size:0.82rem; }
+    @media(max-width:600px){ nav{padding:1rem 1.5rem;} .page{padding:2rem 1.2rem 4rem;} .converter-grid{grid-template-columns:1fr;} .buttons-grid{grid-template-columns:repeat(2,1fr);} .page-header h1{font-size:1.8rem;} footer{padding:2rem 1.5rem;} }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="../index.html" class="logo"><div class="logo-icon">🦏</div><span class="logo-text">Tools<span>Rhino</span></span></a>
+    <a href="../index.html" class="back-link">← All Tools</a>
+  </nav>
+
+  <div class="page">
+    <div class="page-header">
+      <div class="tool-badge">🔤 Text Tool</div>
+      <h1>Case Converter</h1>
+      <p>Convert your text to any case format instantly. Uppercase, lowercase, title case, sentence case, camelCase and more — all free.</p>
+    </div>
+
+    <div class="buttons-grid">
+      <button class="case-btn" onclick="convert('upper')">UPPER CASE</button>
+      <button class="case-btn" onclick="convert('lower')">lower case</button>
+      <button class="case-btn" onclick="convert('title')">Title Case</button>
+      <button class="case-btn" onclick="convert('sentence')">Sentence case</button>
+      <button class="case-btn" onclick="convert('camel')">camelCase</button>
+      <button class="case-btn" onclick="convert('snake')">snake_case</button>
+    </div>
+
+    <div class="converter-grid">
+      <div class="text-box">
+        <label>Input Text</label>
+        <textarea id="inputText" placeholder="Type or paste your text here..."></textarea>
+        <div class="action-row">
+          <button class="btn btn-outline" onclick="clearAll()">Clear</button>
+          <button class="btn btn-outline" onclick="pasteText()">Paste</button>
+        </div>
+      </div>
+      <div class="text-box">
+        <label>Converted Text</label>
+        <textarea id="outputText" placeholder="Converted text will appear here..." readonly></textarea>
+        <div class="action-row">
+          <button class="btn btn-accent" onclick="copyOutput()">Copy Result</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="seo-content">
+      <h2>How to Use the Case Converter</h2>
+      <p>Paste or type your text in the left box, then click any case button to instantly convert it. The result appears on the right and you can copy it with one click.</p>
+      <p>This free case converter is perfect for writers, developers, students and marketers. Use it to fix accidentally all-caps text, format headings properly, prepare variable names in snake_case or camelCase for coding, and more.</p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <a href="../index.html" class="logo"><div class="logo-icon">🦏</div><span class="logo-text">Tools<span>Rhino</span></span></a>
+      <div class="footer-links"><a href="../about.html">About</a><a href="../privacy.html">Privacy Policy</a><a href="../contact.html">Contact</a></div>
+      <div class="footer-copy">© 2025 ToolsRhino</div>
+    </div>
+  </footer>
+
+  <script>
+    function convert(type) {
+      const text = document.getElementById('inputText').value;
+      let result = '';
+      switch(type) {
+        case 'upper': result = text.toUpperCase(); break;
+        case 'lower': result = text.toLowerCase(); break;
+        case 'title': result = text.toLowerCase().replace(/\b\w/g, c => c.toUpperCase()); break;
+        case 'sentence': result = text.toLowerCase().replace(/(^\s*\w|[.!?]\s*\w)/g, c => c.toUpperCase()); break;
+        case 'camel': result = text.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, (m, c) => c.toUpperCase()); break;
+        case 'snake': result = text.toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, ''); break;
+      }
+      document.getElementById('outputText').value = result;
+      document.querySelectorAll('.case-btn').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+    function clearAll() {
+      document.getElementById('inputText').value = '';
+      document.getElementById('outputText').value = '';
+      document.querySelectorAll('.case-btn').forEach(b => b.classList.remove('active'));
+    }
+    async function pasteText() {
+      try {
+        const text = await navigator.clipboard.readText();
+        document.getElementById('inputText').value = text;
+      } catch(e) { alert('Please paste manually with Ctrl+V'); }
+    }
+    function copyOutput() {
+      const text = document.getElementById('outputText').value;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = event.target;
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy Result', 2000);
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | ToolsRhino</title>
+  <meta name="description" content="Get in touch with the ToolsRhino team. Suggest a new tool, report an issue, or ask a question." />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root { --bg:#0a0a0a; --surface:#111111; --border:#222222; --accent:#ff6b00; --accent2:#ff9a00; --text:#f0f0f0; --muted:#888888; }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif; font-weight:300; }
+    nav { display:flex; align-items:center; justify-content:space-between; padding:1.2rem 4rem; background:rgba(10,10,10,0.95); border-bottom:1px solid var(--border); }
+    .logo { display:flex; align-items:center; gap:0.6rem; text-decoration:none; }
+    .logo-icon { width:32px; height:32px; background:var(--accent); border-radius:7px; display:flex; align-items:center; justify-content:center; font-size:1rem; }
+    .logo-text { font-family:'Syne',sans-serif; font-weight:800; font-size:1.1rem; color:var(--text); }
+    .logo-text span { color:var(--accent); }
+    .back-link { color:var(--muted); text-decoration:none; font-size:0.9rem; }
+    .page { max-width:640px; margin:0 auto; padding:4rem 2rem 6rem; }
+    h1 { font-family:'Syne',sans-serif; font-size:2.5rem; font-weight:800; letter-spacing:-1px; margin-bottom:0.8rem; }
+    .subtitle { color:var(--muted); font-size:1rem; line-height:1.6; margin-bottom:3rem; }
+    .form-group { margin-bottom:1.4rem; }
+    label { display:block; font-size:0.82rem; color:var(--muted); margin-bottom:0.5rem; font-weight:500; }
+    input, textarea, select {
+      width:100%; padding:0.85rem 1.1rem;
+      background:var(--surface); border:1px solid var(--border);
+      border-radius:10px; color:var(--text);
+      font-family:'DM Sans',sans-serif; font-size:0.95rem; font-weight:300;
+      outline:none; transition:border-color 0.2s;
+    }
+    input:focus, textarea:focus, select:focus { border-color:rgba(255,107,0,0.4); }
+    textarea { height:140px; resize:vertical; line-height:1.6; }
+    select option { background:var(--surface); }
+    .btn-submit {
+      width:100%; padding:1rem; background:var(--accent); color:white;
+      border:none; border-radius:10px; font-family:'DM Sans',sans-serif;
+      font-size:1rem; font-weight:500; cursor:pointer; transition:all 0.2s; margin-top:0.5rem;
+    }
+    .btn-submit:hover { background:var(--accent2); }
+    .success-msg { display:none; background:rgba(255,107,0,0.08); border:1px solid rgba(255,107,0,0.2); border-radius:10px; padding:1.5rem; text-align:center; margin-top:1.5rem; }
+    .success-msg h3 { font-family:'Syne',sans-serif; margin-bottom:0.5rem; }
+    .success-msg p { color:var(--muted); font-size:0.9rem; }
+    .email-alt { margin-top:2.5rem; padding-top:2rem; border-top:1px solid var(--border); text-align:center; }
+    .email-alt p { color:var(--muted); font-size:0.9rem; }
+    .email-alt a { color:var(--accent); }
+    footer { padding:2rem 4rem; border-top:1px solid var(--border); margin-top:4rem; }
+    .footer-inner { max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }
+    .footer-links { display:flex; gap:2rem; }
+    .footer-links a { color:var(--muted); text-decoration:none; font-size:0.85rem; }
+    .footer-copy { color:var(--muted); font-size:0.82rem; }
+    @media(max-width:600px){ nav{padding:1rem 1.5rem;} .page{padding:2rem 1.2rem 4rem;} h1{font-size:2rem;} footer{padding:2rem 1.5rem;} }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="logo"><div class="logo-icon">🦏</div><span class="logo-text">Tools<span>Rhino</span></span></a>
+    <a href="index.html" class="back-link">← Home</a>
+  </nav>
+
+  <div class="page">
+    <h1>Get in Touch</h1>
+    <p class="subtitle">Have a tool idea? Found a bug? Want to say hello? We read every message and usually reply within 24 hours.</p>
+
+    <div class="form-group">
+      <label>Your Name</label>
+      <input type="text" id="name" placeholder="Your full name" />
+    </div>
+    <div class="form-group">
+      <label>Email Address</label>
+      <input type="email" id="email" placeholder="your@email.com" />
+    </div>
+    <div class="form-group">
+      <label>Subject</label>
+      <select id="subject">
+        <option value="">Select a subject...</option>
+        <option value="tool-suggestion">Suggest a New Tool</option>
+        <option value="bug-report">Report a Bug</option>
+        <option value="general">General Inquiry</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Message</label>
+      <textarea id="message" placeholder="Write your message here..."></textarea>
+    </div>
+    <button class="btn-submit" onclick="submitForm()">Send Message →</button>
+
+    <div class="success-msg" id="successMsg">
+      <h3>✅ Message Sent!</h3>
+      <p>Thanks for reaching out. We'll get back to you within 24 hours.</p>
+    </div>
+
+    <div class="email-alt">
+      <p>Or email us directly at <a href="mailto:contact@toolsrhino.com">contact@toolsrhino.com</a></p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <a href="index.html" class="logo"><div class="logo-icon">🦏</div><span class="logo-text">Tools<span>Rhino</span></span></a>
+      <div class="footer-links"><a href="about.html">About</a><a href="privacy.html">Privacy Policy</a><a href="contact.html">Contact</a></div>
+      <div class="footer-copy">© 2025 ToolsRhino</div>
+    </div>
+  </footer>
+
+  <script>
+    function submitForm() {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if (!name || !email || !message) { alert('Please fill in all required fields.'); return; }
+      document.getElementById('successMsg').style.display = 'block';
+      document.getElementById('name').value = '';
+      document.getElementById('email').value = '';
+      document.getElementById('message').value = '';
+    }
+  </script>
+</body>
+</html>
