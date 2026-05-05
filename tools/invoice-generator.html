@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Invoice Generator — Create Professional Invoices Instantly | ToolsRhino</title>
+  <meta name="description" content="Free online invoice generator. Create professional invoices in seconds and print or save as PDF. No signup required. Perfect for freelancers." />
+  <link rel="canonical" href="https://toolsrhino.com/tools/invoice-generator.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root{--bg:#0a0a0a;--surface:#111111;--border:#222222;--accent:#ff6b00;--accent2:#ff9a00;--text:#f0f0f0;--muted:#888888;}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:1.2rem 4rem;background:rgba(10,10,10,0.95);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;}
+    .logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;}
+    .logo-icon{width:32px;height:32px;background:var(--accent);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:1rem;}
+    .logo-text{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:var(--text);}
+    .logo-text span{color:var(--accent);}
+    .back-link{color:var(--muted);text-decoration:none;font-size:0.9rem;}
+    .page{max-width:900px;margin:0 auto;padding:3rem 2rem 6rem;}
+    .tool-badge{display:inline-block;background:rgba(255,107,0,0.1);border:1px solid rgba(255,107,0,0.2);color:var(--accent2);padding:0.3rem 0.8rem;border-radius:6px;font-size:0.75rem;font-weight:500;margin-bottom:1rem;}
+    h1{font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;letter-spacing:-1px;margin-bottom:0.6rem;}
+    .subtitle{color:var(--muted);font-size:1rem;line-height:1.6;margin-bottom:2rem;}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem;}
+    .card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.8rem;}
+    .card h3{font-family:'Syne',sans-serif;font-weight:700;font-size:0.95rem;color:var(--accent2);margin-bottom:1.2rem;}
+    .input-group{margin-bottom:1rem;}
+    .input-group label{display:block;font-size:0.78rem;color:var(--muted);margin-bottom:0.4rem;}
+    .input-group input, .input-group textarea{width:100%;padding:0.7rem 0.9rem;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.9rem;outline:none;transition:border-color 0.2s;}
+    .input-group input:focus, .input-group textarea:focus{border-color:rgba(255,107,0,0.4);}
+    .input-group textarea{height:70px;resize:vertical;line-height:1.5;}
+    .items-section{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.8rem;margin-bottom:1.5rem;}
+    .items-section h3{font-family:'Syne',sans-serif;font-weight:700;font-size:0.95rem;color:var(--accent2);margin-bottom:1.2rem;}
+    .item-row{display:grid;grid-template-columns:3fr 1fr 1fr 0.5fr;gap:0.8rem;align-items:center;margin-bottom:0.8rem;}
+    .item-row input{width:100%;padding:0.65rem 0.8rem;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.88rem;outline:none;}
+    .item-row input:focus{border-color:rgba(255,107,0,0.4);}
+    .item-header{display:grid;grid-template-columns:3fr 1fr 1fr 0.5fr;gap:0.8rem;margin-bottom:0.5rem;}
+    .item-header span{font-size:0.75rem;color:var(--muted);font-weight:500;}
+    .del-btn{background:rgba(255,50,50,0.1);border:1px solid rgba(255,50,50,0.2);color:#ff6666;border-radius:6px;padding:0.5rem;cursor:pointer;font-size:0.8rem;}
+    .del-btn:hover{background:rgba(255,50,50,0.2);}
+    .btn-add{background:transparent;border:1px dashed var(--border);color:var(--muted);padding:0.7rem;border-radius:8px;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:0.85rem;width:100%;margin-top:0.5rem;transition:all 0.2s;}
+    .btn-add:hover{border-color:var(--accent);color:var(--accent);}
+    .totals{display:flex;flex-direction:column;align-items:flex-end;gap:0.5rem;margin-top:1.2rem;padding-top:1.2rem;border-top:1px solid var(--border);}
+    .total-row{display:flex;gap:2rem;font-size:0.9rem;}
+    .total-row span:first-child{color:var(--muted);}
+    .total-final{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;color:var(--accent);}
+    .btn-primary{background:var(--accent);color:white;padding:0.85rem 2rem;border-radius:8px;border:none;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:500;cursor:pointer;transition:all 0.2s;}
+    .btn-primary:hover{background:var(--accent2);}
+    .actions{display:flex;gap:1rem;margin-top:1rem;}
+
+    /* PRINT STYLES */
+    @media print {
+      body{background:white;color:#000;}
+      nav, .actions, .btn-add, .del-btn, .subtitle, .tool-badge, h1, .seo-content, footer{display:none!important;}
+      .page{padding:0;max-width:100%;}
+      .card, .items-section, .form-grid{background:white;border:1px solid #ddd;}
+      .input-group input, .input-group textarea, .item-row input{background:white;border:1px solid #ddd;color:#000;}
+      .card h3, .items-section h3{color:#ff6b00;}
+      .total-final{color:#ff6b00;}
+    }
+
+    .seo-content{margin-top:4rem;padding-top:3rem;border-top:1px solid var(--border);}
+    .seo-content h2{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:700;margin-bottom:0.8rem;}
+    .seo-content p{color:var(--muted);line-height:1.8;margin-bottom:1rem;font-size:0.95rem;}
+    footer{padding:2rem 4rem;border-top:1px solid var(--border);margin-top:4rem;}
+    .footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+    .footer-links{display:flex;gap:2rem;}
+    .footer-links a{color:var(--muted);text-decoration:none;font-size:0.85rem;}
+    .footer-copy{color:var(--muted);font-size:0.82rem;}
+    @media(max-width:600px){nav{padding:1rem 1.5rem;}.page{padding:2rem 1.2rem 4rem;}h1{font-size:1.6rem;}.form-grid{grid-template-columns:1fr;}.item-row{grid-template-columns:2fr 1fr 1fr 0.5fr;}footer{padding:2rem 1.5rem;}}
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="../index.html" class="logo"><div class="logo-icon">🦏</div><span class="logo-text">Tools<span>Rhino</span></span></a>
+    <a href="../index.html" class="back-link">← All Tools</a>
+  </nav>
+  <div class="page">
+    <div class="tool-badge">🧾 Freelancer Tool</div>
+    <h1>Invoice Generator</h1>
+    <p class="subtitle">Create a professional invoice in seconds. Fill in the details below and click Print / Save as PDF. Free, no signup required.</p>
+
+    <div class="form-grid">
+      <div class="card">
+        <h3>👤 Your Details (From)</h3>
+        <div class="input-group"><label>Your Name / Business Name</label><input id="fromName" placeholder="e.g. John Smith" /></div>
+        <div class="input-group"><label>Email</label><input id="fromEmail" placeholder="john@email.com" /></div>
+        <div class="input-group"><label>Phone</label><input id="fromPhone" placeholder="+1 234 567 890" /></div>
+        <div class="input-group"><label>Address</label><textarea id="fromAddress" placeholder="123 Street, City, Country"></textarea></div>
+      </div>
+      <div class="card">
+        <h3>🏢 Client Details (Bill To)</h3>
+        <div class="input-group"><label>Client Name / Company</label><input id="toName" placeholder="e.g. Acme Corp" /></div>
+        <div class="input-group"><label>Client Email</label><input id="toEmail" placeholder="client@company.com" /></div>
+        <div class="input-group"><label>Client Phone</label><input id="toPhone" placeholder="+1 234 567 890" /></div>
+        <div class="input-group"><label>Client Address</label><textarea id="toAddress" placeholder="456 Avenue, City, Country"></textarea></div>
+      </div>
+    </div>
+
+    <div class="form-grid">
+      <div class="card">
+        <h3>📋 Invoice Details</h3>
+        <div class="input-group"><label>Invoice Number</label><input id="invoiceNum" placeholder="INV-001" value="INV-001" /></div>
+        <div class="input-group"><label>Invoice Date</label><input id="invoiceDate" type="date" /></div>
+        <div class="input-group"><label>Due Date</label><input id="dueDate" type="date" /></div>
+      </div>
+      <div class="card">
+        <h3>💳 Payment Details</h3>
+        <div class="input-group"><label>Bank Name</label><input id="bankName" placeholder="e.g. Chase Bank" /></div>
+        <div class="input-group"><label>Account Number / IBAN</label><input id="accountNum" placeholder="e.g. 1234 5678 9012" /></div>
+        <div class="input-group"><label>Payment Method</label><input id="payMethod" placeholder="e.g. Bank Transfer / PayPal" /></div>
+      </div>
+    </div>
+
+    <div class="items-section">
+      <h3>📦 Services / Items</h3>
+      <div class="item-header">
+        <span>Description</span><span>Qty</span><span>Rate ($)</span><span></span>
+      </div>
+      <div id="itemsList"></div>
+      <button class="btn-add" onclick="addItem()">+ Add Item</button>
+      <div class="totals">
+        <div class="total-row"><span>Subtotal:</span><span id="subtotal">$0.00</span></div>
+        <div class="total-row"><span>Tax (%):</span><input type="number" id="taxPct" value="0" style="width:60px;padding:0.3rem 0.5rem;background:var(--bg);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:0.9rem;outline:none;" oninput="calcTotals()" /></div>
+        <div class="total-row"><span>Tax Amount:</span><span id="taxAmt">$0.00</span></div>
+        <div class="total-row total-final"><span>Total Due:</span><span id="totalDue">$0.00</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>📝 Notes</h3>
+      <div class="input-group"><textarea id="notes" placeholder="e.g. Thank you for your business! Payment due within 30 days." style="height:80px;"></textarea></div>
+    </div>
+
+    <div class="actions">
+      <button class="btn-primary" onclick="window.print()">🖨️ Print / Save as PDF</button>
+    </div>
+
+    <div class="seo-content">
+      <h2>How to Use the Free Invoice Generator</h2>
+      <p>Fill in your details, your client's details, add your services and rates, then click "Print / Save as PDF". In your browser's print dialog, choose "Save as PDF" to download a professional invoice instantly.</p>
+      <p>This free invoice generator is perfect for freelancers, consultants, designers, developers and any self-employed professional who needs to send invoices quickly without expensive software.</p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <a href="../index.html" class="logo"><div class="logo-icon">🦏</div><span class="logo-text">Tools<span>Rhino</span></span></a>
+      <div class="footer-links"><a href="../about.html">About</a><a href="../privacy.html">Privacy</a><a href="../contact.html">Contact</a></div>
+      <div class="footer-copy">© 2025 ToolsRhino</div>
+    </div>
+  </footer>
+
+  <script>
+    // Set today's date
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('invoiceDate').value = today;
+    const due = new Date(); due.setDate(due.getDate() + 30);
+    document.getElementById('dueDate').value = due.toISOString().split('T')[0];
+
+    let items = [{desc:'',qty:1,rate:0}];
+
+    function renderItems() {
+      const list = document.getElementById('itemsList');
+      list.innerHTML = items.map((item, i) => `
+        <div class="item-row">
+          <input type="text" placeholder="Service description" value="${item.desc}" oninput="items[${i}].desc=this.value" />
+          <input type="number" placeholder="1" value="${item.qty}" oninput="items[${i}].qty=parseFloat(this.value)||0;calcTotals()" />
+          <input type="number" placeholder="0.00" value="${item.rate}" oninput="items[${i}].rate=parseFloat(this.value)||0;calcTotals()" />
+          <button class="del-btn" onclick="removeItem(${i})">✕</button>
+        </div>
+      `).join('');
+      calcTotals();
+    }
+
+    function addItem() { items.push({desc:'',qty:1,rate:0}); renderItems(); }
+    function removeItem(i) { if(items.length>1){items.splice(i,1);renderItems();} }
+
+    function calcTotals() {
+      const sub = items.reduce((s,i)=>s+(i.qty*i.rate),0);
+      const tax = (parseFloat(document.getElementById('taxPct').value)||0)/100;
+      const taxAmt = sub*tax;
+      const total = sub+taxAmt;
+      document.getElementById('subtotal').textContent = '$'+sub.toFixed(2);
+      document.getElementById('taxAmt').textContent = '$'+taxAmt.toFixed(2);
+      document.getElementById('totalDue').textContent = '$'+total.toFixed(2);
+    }
+
+    renderItems();
+  </script>
+</body>
+</html>

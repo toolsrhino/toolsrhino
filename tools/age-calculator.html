@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Age Calculator — Calculate Your Exact Age | ToolsRhino</title>
+  <meta name="description" content="Free online age calculator. Find your exact age in years, months and days. Also shows next birthday countdown. No signup required." />
+  <link rel="canonical" href="https://toolsrhino.com/tools/age-calculator.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root{--bg:#0a0a0a;--surface:#111111;--border:#222222;--accent:#ff6b00;--accent2:#ff9a00;--text:#f0f0f0;--muted:#888888;}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:1.2rem 4rem;background:rgba(10,10,10,0.95);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;}
+    .logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;}
+    .logo-icon{width:32px;height:32px;background:var(--accent);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:1rem;}
+    .logo-text{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:var(--text);}
+    .logo-text span{color:var(--accent);}
+    .back-link{color:var(--muted);text-decoration:none;font-size:0.9rem;}
+    .page{max-width:700px;margin:0 auto;padding:3rem 2rem 6rem;}
+    .tool-badge{display:inline-block;background:rgba(255,107,0,0.1);border:1px solid rgba(255,107,0,0.2);color:var(--accent2);padding:0.3rem 0.8rem;border-radius:6px;font-size:0.75rem;font-weight:500;margin-bottom:1rem;}
+    h1{font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;letter-spacing:-1px;margin-bottom:0.6rem;}
+    .subtitle{color:var(--muted);font-size:1rem;line-height:1.6;margin-bottom:2rem;}
+    .card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:2rem;margin-bottom:1.5rem;}
+    .card h3{font-family:'Syne',sans-serif;font-weight:700;font-size:0.95rem;color:var(--accent2);margin-bottom:1.5rem;}
+    .input-group{margin-bottom:1.2rem;}
+    .input-group label{display:block;font-size:0.8rem;color:var(--muted);margin-bottom:0.5rem;}
+    .input-group input{width:100%;padding:0.85rem 1rem;background:var(--bg);border:1px solid var(--border);border-radius:10px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:1rem;outline:none;transition:border-color 0.2s;}
+    .input-group input:focus{border-color:rgba(255,107,0,0.4);}
+    .results-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.5rem;}
+    .result-box{background:rgba(255,107,0,0.08);border:1px solid rgba(255,107,0,0.2);border-radius:12px;padding:1.5rem;text-align:center;}
+    .result-box .num{font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;color:var(--accent);}
+    .result-box .label{font-size:0.75rem;color:var(--muted);margin-top:0.3rem;}
+    .extra-results{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem;}
+    .extra-box{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.2rem;text-align:center;}
+    .extra-box .num{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:var(--accent2);}
+    .extra-box .label{font-size:0.75rem;color:var(--muted);margin-top:0.3rem;}
+    .birthday-box{background:rgba(255,107,0,0.05);border:1px solid rgba(255,107,0,0.15);border-radius:10px;padding:1.2rem;text-align:center;margin-top:1rem;}
+    .birthday-box p{color:var(--muted);font-size:0.9rem;line-height:1.6;}
+    .birthday-box strong{color:var(--accent2);}
+    .seo-content{margin-top:4rem;padding-top:3rem;border-top:1px solid var(--border);}
+    .seo-content h2{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:700;margin-bottom:0.8rem;}
+    .seo-content p{color:var(--muted);line-height:1.8;margin-bottom:1rem;font-size:0.95rem;}
+    footer{padding:2rem 4rem;border-top:1px solid var(--border);margin-top:4rem;}
+    .footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+    .footer-links{display:flex;gap:2rem;}
+    .footer-links a{color:var(--muted);text-decoration:none;font-size:0.85rem;}
+    .footer-copy{color:var(--muted);font-size:0.82rem;}
+    @media(max-width:600px){nav{padding:1rem 1.5rem;}.page{padding:2rem 1.2rem 4rem;}h1{font-size:1.8rem;}.results-grid{grid-template-columns:repeat(3,1fr);}.extra-results{grid-template-columns:1fr 1fr;}footer{padding:2rem 1.5rem;}}
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="../index.html" class="logo"><div class="logo-icon">🦏</div><span class="logo-text">Tools<span>Rhino</span></span></a>
+    <a href="../index.html" class="back-link">← All Tools</a>
+  </nav>
+  <div class="page">
+    <div class="tool-badge">🎂 Calculator</div>
+    <h1>Age Calculator</h1>
+    <p class="subtitle">Find your exact age in years, months and days. See total days lived, weeks, and your next birthday countdown — all instantly.</p>
+
+    <div class="card">
+      <h3>📅 Enter Your Birthday</h3>
+      <div class="input-group">
+        <label>Date of Birth</label>
+        <input type="date" id="dob" onchange="calcAge()" />
+      </div>
+      <div class="input-group">
+        <label>Calculate Age As Of (default: today)</label>
+        <input type="date" id="refDate" onchange="calcAge()" />
+      </div>
+      <div class="results-grid">
+        <div class="result-box"><div class="num" id="years">—</div><div class="label">Years</div></div>
+        <div class="result-box"><div class="num" id="months">—</div><div class="label">Months</div></div>
+        <div class="result-box"><div class="num" id="days">—</div><div class="label">Days</div></div>
+      </div>
+      <div class="extra-results">
+        <div class="extra-box"><div class="num" id="totalDays">—</div><div class="label">Total Days Lived</div></div>
+        <div class="extra-box"><div class="num" id="totalWeeks">—</div><div class="label">Total Weeks Lived</div></div>
+      </div>
+      <div class="birthday-box" id="birthdayBox" style="display:none;">
+        <p id="birthdayText"></p>
+      </div>
+    </div>
+
+    <div class="seo-content">
+      <h2>How to Use the Age Calculator</h2>
+      <p>Select your date of birth and the calculator instantly shows your exact age in years, months and days. You can also change the reference date to calculate age at a specific point in time — useful for legal documents, applications, or historical calculations.</p>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-inner">
+      <a href="../index.html" class="logo"><div class="logo-icon">🦏</div><span class="logo-text">Tools<span>Rhino</span></span></a>
+      <div class="footer-links"><a href="../about.html">About</a><a href="../privacy.html">Privacy</a><a href="../contact.html">Contact</a></div>
+      <div class="footer-copy">© 2025 ToolsRhino</div>
+    </div>
+  </footer>
+  <script>
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('refDate').value = today;
+
+    function calcAge() {
+      const dob = new Date(document.getElementById('dob').value);
+      const ref = new Date(document.getElementById('refDate').value);
+      if (!document.getElementById('dob').value) return;
+
+      let years = ref.getFullYear() - dob.getFullYear();
+      let months = ref.getMonth() - dob.getMonth();
+      let days = ref.getDate() - dob.getDate();
+
+      if (days < 0) { months--; const prev = new Date(ref.getFullYear(), ref.getMonth(), 0); days += prev.getDate(); }
+      if (months < 0) { years--; months += 12; }
+
+      const totalDays = Math.floor((ref - dob) / (1000*60*60*24));
+      const totalWeeks = Math.floor(totalDays / 7);
+
+      document.getElementById('years').textContent = years;
+      document.getElementById('months').textContent = months;
+      document.getElementById('days').textContent = days;
+      document.getElementById('totalDays').textContent = totalDays.toLocaleString();
+      document.getElementById('totalWeeks').textContent = totalWeeks.toLocaleString();
+
+      // Next birthday
+      const nextBday = new Date(ref.getFullYear(), dob.getMonth(), dob.getDate());
+      if (nextBday <= ref) nextBday.setFullYear(ref.getFullYear() + 1);
+      const daysUntil = Math.ceil((nextBday - ref) / (1000*60*60*24));
+      const bdayBox = document.getElementById('birthdayBox');
+      bdayBox.style.display = 'block';
+      document.getElementById('birthdayText').innerHTML = daysUntil === 0
+        ? '🎉 <strong>Happy Birthday!</strong> Today is your birthday!'
+        : `🎂 Your next birthday is in <strong>${daysUntil} days</strong> (${nextBday.toDateString()})`;
+    }
+  </script>
+</body>
+</html>
