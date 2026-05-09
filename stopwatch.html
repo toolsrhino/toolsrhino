@@ -2,10 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GPA Calculator Free — Calculate Your GPA Instantly | ToolsRhino</title>
-  <meta name="description" content="Free online GPA calculator on a 4.0 scale. Add courses, credit hours and grades. GPA calculates instantly. No signup required." />
-  <link rel="canonical" href="https://toolsrhino.com/tools/gpa-calculator.html" />
+  <title>Online Stopwatch & Timer — Free Stopwatch Tool | ToolsRhino</title>
+  <meta name="description" content="Free online stopwatch and countdown timer. Start, stop, lap and reset. Works on all devices. No signup required." />
+  <meta name="keywords" content="online stopwatch, free stopwatch, countdown timer online, stopwatch with lap, timer online free" />
+  <link rel="canonical" href="https://toolsrhino.com/tools/stopwatch.html" />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W5NGT3NMR8"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-W5NGT3NMR8');</script>
   <style>
     :root{--bg:#0a0a0a;--surface:#111111;--border:#222222;--accent:#ff6b00;--accent2:#ff9a00;--text:#f0f0f0;--muted:#888888;}
     *{margin:0;padding:0;box-sizing:border-box;}
@@ -16,78 +19,48 @@
     .logo-text{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:var(--text);}
     .logo-text span{color:var(--accent);}
     .back-link{color:var(--muted);text-decoration:none;font-size:0.9rem;}
-    .page{max-width:800px;margin:0 auto;padding:3rem 2rem 6rem;}
+    .page{max-width:680px;margin:0 auto;padding:3rem 2rem 6rem;}
     .tool-badge{display:inline-block;background:rgba(255,107,0,0.1);border:1px solid rgba(255,107,0,0.2);color:var(--accent2);padding:0.3rem 0.8rem;border-radius:6px;font-size:0.75rem;font-weight:500;margin-bottom:1rem;}
     h1{font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;letter-spacing:-1px;margin-bottom:0.6rem;}
     .subtitle{color:var(--muted);font-size:1rem;line-height:1.6;margin-bottom:2rem;}
-    .card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.8rem;margin-bottom:1.5rem;}
-    .card h3{font-family:'Syne',sans-serif;font-weight:700;font-size:0.95rem;color:var(--accent2);margin-bottom:1.2rem;}
-    .row-header{display:grid;grid-template-columns:3fr 1fr 1fr 0.5fr;gap:0.8rem;margin-bottom:0.5rem;}
-    .row-header span{font-size:0.75rem;color:var(--muted);}
-    .course-row{display:grid;grid-template-columns:3fr 1fr 1fr 0.5fr;gap:0.8rem;margin-bottom:0.8rem;align-items:center;}
-    .course-row input, .course-row select{width:100%;padding:0.65rem 0.8rem;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.88rem;outline:none;}
-    .course-row input:focus, .course-row select:focus{border-color:rgba(255,107,0,0.4);}
-    .del-btn{background:rgba(255,50,50,0.1);border:1px solid rgba(255,50,50,0.2);color:#ff6666;border-radius:6px;padding:0.5rem;cursor:pointer;font-size:0.8rem;}
-    .btn-add{background:transparent;border:1px dashed var(--border);color:var(--muted);padding:0.7rem;border-radius:8px;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:0.85rem;width:100%;margin-top:0.5rem;transition:all 0.2s;}
-    .btn-add:hover{border-color:var(--accent);color:var(--accent);}
-    .result-box{background:rgba(255,107,0,0.08);border:1px solid rgba(255,107,0,0.2);border-radius:12px;padding:2rem;text-align:center;margin-top:1.5rem;}
-    .gpa-num{font-family:'Syne',sans-serif;font-size:4rem;font-weight:800;color:var(--accent);}
-    .gpa-label{color:var(--muted);font-size:0.9rem;margin-top:0.3rem;}
-    .grade-badge{display:inline-block;background:rgba(255,107,0,0.15);color:var(--accent2);padding:0.3rem 1rem;border-radius:100px;font-size:0.85rem;font-weight:500;margin-top:0.8rem;}
-    .grade-table{width:100%;border-collapse:collapse;font-size:0.85rem;margin-top:1rem;}
-    .grade-table th{text-align:left;color:var(--muted);font-weight:500;padding:0.5rem;border-bottom:1px solid var(--border);}
-    .grade-table td{padding:0.5rem;border-bottom:1px solid rgba(34,34,34,0.5);color:var(--muted);}
-    .seo-content{margin-top:4rem;padding-top:3rem;border-top:1px solid var(--border);}
-    .seo-content h2{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:700;margin-bottom:0.8rem;}
-    .seo-content p{color:var(--muted);line-height:1.8;margin-bottom:1rem;font-size:0.95rem;}
-    footer{padding:2rem 4rem;border-top:1px solid var(--border);margin-top:4rem;}
-    .footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
-    .footer-links{display:flex;gap:2rem;}
-    .footer-links a{color:var(--muted);text-decoration:none;font-size:0.85rem;}
-    .footer-copy{color:var(--muted);font-size:0.82rem;}
-    @media(max-width:600px){nav{padding:1rem 1.5rem;}.page{padding:2rem 1.2rem 4rem;}h1{font-size:1.6rem;}.course-row{grid-template-columns:2fr 1fr 1fr 0.5fr;}footer{padding:2rem 1.5rem;}}
-
-    .seo-content { margin-top: 4rem; padding-top: 3rem; border-top: 1px solid var(--border); }
-    .seo-content h2 { font-family: 'Syne', sans-serif; font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; margin-top: 2rem; }
-    .seo-content h2:first-child { margin-top: 0; }
-    .seo-content p { color: var(--muted); line-height: 1.8; margin-bottom: 1rem; font-size: 0.95rem; }
-    .faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.2rem 1.5rem; margin-bottom: 1rem; }
-    .faq-item h3 { font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 700; margin-bottom: 0.6rem; color: var(--accent2); }
-    .faq-item p { color: var(--muted); font-size: 0.88rem; line-height: 1.7; margin: 0; }
-    .related-tools { margin-top: 2rem; }
-    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; margin-top: 1rem; }
-    .related-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1rem; text-align: center; text-decoration: none; color: var(--text); font-size: 0.88rem; font-weight: 500; transition: all 0.2s; }
-    .related-card:hover { border-color: var(--accent); color: var(--accent); }
-    @media(max-width:600px) { .related-grid { grid-template-columns: 1fr; } }
-
+    .tab-row{display:flex;gap:0.5rem;margin-bottom:2rem;}
+    .tab-btn{flex:1;padding:0.7rem;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--muted);cursor:pointer;font-family:'DM Sans',sans-serif;font-size:0.9rem;transition:all 0.2s;}
+    .tab-btn.active{background:var(--accent);border-color:var(--accent);color:white;}
+    .clock-display{font-family:'Syne',sans-serif;font-size:5rem;font-weight:800;text-align:center;color:var(--accent);letter-spacing:4px;padding:2rem;background:var(--surface);border-radius:16px;border:1px solid var(--border);margin-bottom:1.5rem;}
+    .btn-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.8rem;margin-bottom:1.5rem;}
+    .ctrl-btn{padding:0.9rem;border-radius:10px;border:none;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:500;cursor:pointer;transition:all 0.2s;}
+    .btn-start{background:var(--accent);color:white;}
+    .btn-start:hover{background:var(--accent2);}
+    .btn-stop{background:rgba(255,80,80,0.15);color:#ff5050;border:1px solid rgba(255,80,80,0.3);}
+    .btn-stop:hover{background:rgba(255,80,80,0.25);}
+    .btn-lap{background:var(--surface);color:var(--text);border:1px solid var(--border);}
+    .btn-lap:hover{border-color:var(--accent);color:var(--accent);}
+    .btn-reset{background:var(--surface);color:var(--muted);border:1px solid var(--border);grid-column:1/-1;}
+    .laps-list{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1rem;max-height:200px;overflow-y:auto;}
+    .lap-item{display:flex;justify-content:space-between;padding:0.5rem 0;border-bottom:1px solid var(--border);font-size:0.9rem;color:var(--muted);}
+    .lap-item:last-child{border-bottom:none;}
+    .lap-num{color:var(--accent2);font-weight:500;}
+    .timer-setup{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.5rem;margin-bottom:1rem;}
+    .time-inputs{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.8rem;margin-bottom:1rem;}
+    .time-input-group{text-align:center;}
+    .time-input-group label{display:block;font-size:0.75rem;color:var(--muted);margin-bottom:0.4rem;}
+    .time-input-group input{width:100%;padding:0.7rem;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:700;text-align:center;outline:none;}
     .seo-section{margin-top:4rem;padding-top:3rem;border-top:1px solid var(--border);}
     .seo-section h2{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;margin-bottom:1rem;}
-    .seo-section h3{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;margin:1.5rem 0 0.6rem;color:var(--accent2);}
     .seo-section p{color:var(--muted);line-height:1.9;margin-bottom:1rem;font-size:0.95rem;}
-    .faq-section{margin-top:2rem;}
-    .faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:0.8rem;overflow:hidden;}
-    .faq-q{padding:1.1rem 1.3rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:500;font-size:0.92rem;background:var(--surface);}
-    .faq-q:hover{background:#161616;}
-    .faq-a{padding:0 1.3rem;max-height:0;overflow:hidden;transition:all 0.3s;color:var(--muted);font-size:0.88rem;line-height:1.7;}
-    .faq-a.open{padding:1rem 1.3rem;max-height:300px;}
-    .faq-icon{color:var(--accent);font-size:1.1rem;transition:transform 0.3s;flex-shrink:0;}
-    .faq-icon.open{transform:rotate(45deg);}
     .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem;}
     .related-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.2rem;text-decoration:none;color:var(--text);transition:all 0.2s;}
     .related-card:hover{border-color:rgba(255,107,0,0.3);transform:translateY(-2px);}
     .related-card .icon{font-size:1.3rem;margin-bottom:0.4rem;}
     .related-card .name{font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;}
     .related-card .desc{font-size:0.75rem;color:var(--muted);margin-top:0.2rem;}
-    @media(max-width:600px){.related-grid{grid-template-columns:1fr 1fr;}}
+    footer{padding:2rem 4rem;border-top:1px solid var(--border);margin-top:4rem;}
+    .footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+    .footer-links{display:flex;gap:2rem;}
+    .footer-links a{color:var(--muted);text-decoration:none;font-size:0.85rem;}
+    .footer-copy{color:var(--muted);font-size:0.82rem;}
+    @media(max-width:600px){nav{padding:1rem 1.5rem;}.page{padding:2rem 1.2rem 4rem;}h1{font-size:1.8rem;}.clock-display{font-size:3.5rem;}.related-grid{grid-template-columns:1fr 1fr;}footer{padding:2rem 1.5rem;}}
   </style>
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W5NGT3NMR8"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag("js", new Date());
-    gtag("config", "G-W5NGT3NMR8");
-  </script>
 </head>
 <body>
   <nav>
@@ -95,122 +68,87 @@
     <a href="../index.html" class="back-link">← All Tools</a>
   </nav>
   <div class="page">
-    <div class="tool-badge">🎓 Student Tool</div>
-    <h1>GPA Calculator</h1>
-    <p class="subtitle">Calculate your GPA instantly on a 4.0 scale. Add your courses, credit hours and grades — your GPA updates automatically.</p>
-
-    <div class="card">
-      <h3>📚 Your Courses</h3>
-      <div class="row-header"><span>Course Name</span><span>Credits</span><span>Grade</span><span></span></div>
-      <div id="courseList"></div>
-      <button class="btn-add" onclick="addCourse()">+ Add Course</button>
-      <div class="result-box">
-        <div class="gpa-num" id="gpaResult">—</div>
-        <div class="gpa-label">Your GPA (4.0 Scale)</div>
-        <div class="grade-badge" id="gradeBadge">Enter your courses above</div>
-      </div>
+    <div class="tool-badge">⏱️ Time Tool</div>
+    <h1>Stopwatch & Timer</h1>
+    <p class="subtitle">Free online stopwatch with lap times and countdown timer. Works on all devices. No signup required.</p>
+    <div class="tab-row">
+      <button class="tab-btn active" onclick="showTab('stopwatch',this)">⏱ Stopwatch</button>
+      <button class="tab-btn" onclick="showTab('timer',this)">⏳ Countdown Timer</button>
     </div>
 
-    <div class="card">
-      <h3>📊 Grade Scale Reference</h3>
-      <table class="grade-table">
-        <tr><th>Grade</th><th>Points</th><th>Percentage</th></tr>
-        <tr><td>A+</td><td>4.0</td><td>97–100%</td></tr>
-        <tr><td>A</td><td>4.0</td><td>93–96%</td></tr>
-        <tr><td>A-</td><td>3.7</td><td>90–92%</td></tr>
-        <tr><td>B+</td><td>3.3</td><td>87–89%</td></tr>
-        <tr><td>B</td><td>3.0</td><td>83–86%</td></tr>
-        <tr><td>B-</td><td>2.7</td><td>80–82%</td></tr>
-        <tr><td>C+</td><td>2.3</td><td>77–79%</td></tr>
-        <tr><td>C</td><td>2.0</td><td>73–76%</td></tr>
-        <tr><td>D</td><td>1.0</td><td>60–69%</td></tr>
-        <tr><td>F</td><td>0.0</td><td>Below 60%</td></tr>
-      </table>
+    <!-- STOPWATCH -->
+    <div id="stopwatchTab">
+      <div class="clock-display" id="swDisplay">00:00:00.0</div>
+      <div class="btn-row">
+        <button class="ctrl-btn btn-start" onclick="swStart()">▶ Start</button>
+        <button class="ctrl-btn btn-stop" onclick="swStop()">⏸ Stop</button>
+        <button class="ctrl-btn btn-lap" onclick="swLap()">🏁 Lap</button>
+        <button class="ctrl-btn btn-reset" onclick="swReset()">↺ Reset</button>
+      </div>
+      <div class="laps-list" id="lapsList" style="display:none;"></div>
     </div>
 
-    </div>
-    <div class="seo-content">
-      <h2>Free GPA Calculator — Calculate Your GPA Instantly</h2>
-      <p>Our free GPA calculator makes it easy to calculate your Grade Point Average on a 4.0 scale. Add your courses, credit hours and grades and your GPA updates automatically. Perfect for university students in Pakistan, the US, and anywhere that uses a 4.0 grading system.</p>
-      <p>The calculator uses weighted GPA calculation — meaning courses with more credit hours have a greater impact on your overall GPA. This is the standard method used by most universities worldwide.</p>
-
-      <h2>Frequently Asked Questions</h2>
-
-      <div class="faq-item">
-        <h3>How is GPA calculated?</h3>
-        <p>GPA is calculated by multiplying each course's grade points by its credit hours, adding all those values together, then dividing by the total number of credit hours. For example an A in a 3-credit course gives you 4.0 x 3 = 12 quality points. Our calculator does all of this automatically.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>What GPA do I need for Dean's List?</h3>
-        <p>Most universities require a GPA of 3.5 or higher for Dean's List recognition. Some require 3.7 or above. Our calculator shows you a status badge indicating whether you are on track for Dean's List based on your current GPA.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>What is a good GPA in Pakistan?</h3>
-        <p>In Pakistani universities that use the 4.0 scale, a GPA above 3.5 is considered excellent, 3.0-3.5 is good, 2.5-3.0 is average, and below 2.0 may put you at academic risk. Requirements vary by university and program.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>Can I calculate my cumulative GPA?</h3>
-        <p>Yes. Add all your courses from all semesters into the calculator. Include the course name, credit hours and grade for each. The calculator will automatically compute your cumulative weighted GPA across all entries.</p>
-      </div>
-
-      <div class="related-tools">
-        <h2>Related Free Tools</h2>
-        <div class="related-grid">
-          <a href="word-counter.html" class="related-card">📝 Word Counter</a>
-          <a href="percentage-calculator.html" class="related-card">📊 Percentage Calculator</a>
-          <a href="age-calculator.html" class="related-card">🎂 Age Calculator</a>
+    <!-- TIMER -->
+    <div id="timerTab" style="display:none;">
+      <div class="timer-setup">
+        <div class="time-inputs">
+          <div class="time-input-group"><label>Hours</label><input type="number" id="timerH" min="0" max="23" value="0" placeholder="00" /></div>
+          <div class="time-input-group"><label>Minutes</label><input type="number" id="timerM" min="0" max="59" value="5" placeholder="00" /></div>
+          <div class="time-input-group"><label>Seconds</label><input type="number" id="timerS" min="0" max="59" value="0" placeholder="00" /></div>
         </div>
       </div>
+      <div class="clock-display" id="timerDisplay">00:05:00</div>
+      <div class="btn-row">
+        <button class="ctrl-btn btn-start" onclick="timerStart()">▶ Start</button>
+        <button class="ctrl-btn btn-stop" onclick="timerStop()">⏸ Pause</button>
+        <button class="ctrl-btn btn-reset" onclick="timerReset()" style="grid-column:1/-1;">↺ Reset</button>
+      </div>
     </div>
-  </footer>
-    <div class="footer-inner">
-      <a href="../index.html" class="logo"><div class="logo-icon">🦏</div><span class="logo-text">Tools<span>Rhino</span></span></a>
-      <div class="footer-links"><a href="../about.html">About</a><a href="../privacy.html">Privacy</a><a href="../contact.html">Contact</a></div>
-      <div class="footer-copy">© 2025 ToolsRhino</div>
+
+    <div class="seo-section">
+      <h2>Free Online Stopwatch & Countdown Timer</h2>
+      <p>ToolsRhino's free online stopwatch is perfect for timing workouts, study sessions, cooking, sports activities and any task that needs accurate time tracking. The lap feature lets you record split times for running and sports.</p>
+      <p>The countdown timer is ideal for Pomodoro study sessions, cooking timers, presentation practice and meeting management. Set any hours, minutes and seconds combination and start counting down instantly.</p>
+      <div class="related-grid" style="margin-top:2rem;">
+        <a href="age-calculator.html" class="related-card"><div class="icon">🎂</div><div class="name">Age Calculator</div><div class="desc">Find your exact age</div></a>
+        <a href="word-counter.html" class="related-card"><div class="icon">📝</div><div class="name">Word Counter</div><div class="desc">Count words instantly</div></a>
+        <a href="tip-calculator.html" class="related-card"><div class="icon">🍽️</div><div class="name">Tip Calculator</div><div class="desc">Split bills easily</div></a>
+      </div>
     </div>
-  </footer>
+  </div>
+  <footer><div class="footer-inner"><a href="../index.html" class="logo"><div class="logo-icon">🦏</div><span class="logo-text">Tools<span>Rhino</span></span></a><div class="footer-links"><a href="../about.html">About</a><a href="../privacy.html">Privacy</a><a href="../contact.html">Contact</a></div><div class="footer-copy">© 2025 ToolsRhino</div></div></footer>
   <script>
-    const gradePoints = {'A+':4.0,'A':4.0,'A-':3.7,'B+':3.3,'B':3.0,'B-':2.7,'C+':2.3,'C':2.0,'C-':1.7,'D+':1.3,'D':1.0,'D-':0.7,'F':0.0};
-    let courses = [{name:'',credits:3,grade:'A'},{name:'',credits:3,grade:'B'}];
-
-    function gradeOptions(sel) {
-      return Object.keys(gradePoints).map(g=>`<option value="${g}" ${g===sel?'selected':''}>${g}</option>`).join('');
+    // STOPWATCH
+    let swMs=0, swRunning=false, swInterval=null, laps=[];
+    function swFormat(ms){
+      const h=Math.floor(ms/3600000), m=Math.floor((ms%3600000)/60000),
+            s=Math.floor((ms%60000)/1000), d=Math.floor((ms%1000)/100);
+      return `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}.${d}`;
     }
+    function swStart(){if(!swRunning){swRunning=true;const start=Date.now()-swMs;swInterval=setInterval(()=>{swMs=Date.now()-start;document.getElementById('swDisplay').textContent=swFormat(swMs);},100);}}
+    function swStop(){swRunning=false;clearInterval(swInterval);}
+    function swLap(){if(swRunning){laps.push(swMs);const el=document.getElementById('lapsList');el.style.display='block';el.innerHTML=laps.map((l,i)=>`<div class="lap-item"><span class="lap-num">Lap ${i+1}</span><span>${swFormat(l)}</span></div>`).reverse().join('');}}
+    function swReset(){swStop();swMs=0;laps=[];document.getElementById('swDisplay').textContent='00:00:00.0';document.getElementById('lapsList').style.display='none';document.getElementById('lapsList').innerHTML='';}
 
-    function render() {
-      document.getElementById('courseList').innerHTML = courses.map((c,i)=>`
-        <div class="course-row">
-          <input type="text" placeholder="e.g. Mathematics" value="${c.name}" oninput="courses[${i}].name=this.value" />
-          <input type="number" min="1" max="6" value="${c.credits}" oninput="courses[${i}].credits=parseFloat(this.value)||0;calcGPA()" />
-          <select onchange="courses[${i}].grade=this.value;calcGPA()">${gradeOptions(c.grade)}</select>
-          <button class="del-btn" onclick="removeCourse(${i})">✕</button>
-        </div>`).join('');
-      calcGPA();
+    // TIMER
+    let timerSecs=0, timerRunning=false, timerInterval=null;
+    function timerFormat(s){const h=Math.floor(s/3600),m=Math.floor((s%3600)/60),sec=s%60;return `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(sec).padStart(2,'0')}`;}
+    function timerStart(){
+      if(!timerRunning){
+        if(timerSecs===0){timerSecs=parseInt(document.getElementById('timerH').value||0)*3600+parseInt(document.getElementById('timerM').value||0)*60+parseInt(document.getElementById('timerS').value||0);}
+        if(timerSecs<=0)return;
+        timerRunning=true;
+        timerInterval=setInterval(()=>{timerSecs--;document.getElementById('timerDisplay').textContent=timerFormat(timerSecs);if(timerSecs<=0){timerStop();document.getElementById('timerDisplay').textContent='⏰ DONE!';document.getElementById('timerDisplay').style.color='var(--accent2)';}},1000);
+      }
     }
-
-    function addCourse(){courses.push({name:'',credits:3,grade:'A'});render();}
-    function removeCourse(i){if(courses.length>1){courses.splice(i,1);render();}}
-
-    function calcGPA() {
-      let totalPoints=0, totalCredits=0;
-      courses.forEach(c=>{totalPoints+=gradePoints[c.grade]*c.credits;totalCredits+=c.credits;});
-      if(totalCredits===0){document.getElementById('gpaResult').textContent='—';return;}
-      const gpa=(totalPoints/totalCredits).toFixed(2);
-      document.getElementById('gpaResult').textContent=gpa;
-      const badge = gpa>=3.7?'🏆 Excellent — Dean\'s List':gpa>=3.0?'✅ Good Standing':gpa>=2.0?'⚠️ Satisfactory':'❌ Below Average';
-      document.getElementById('gradeBadge').textContent=badge;
+    function timerStop(){timerRunning=false;clearInterval(timerInterval);}
+    function timerReset(){timerStop();timerSecs=0;document.getElementById('timerDisplay').textContent='00:00:00';document.getElementById('timerDisplay').style.color='var(--accent)';}
+    function showTab(tab, btn){
+      document.getElementById('stopwatchTab').style.display=tab==='stopwatch'?'block':'none';
+      document.getElementById('timerTab').style.display=tab==='timer'?'block':'none';
+      document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
     }
-    render();
-  
-    function toggleFAQ(el) {
-      const a = el.nextElementSibling;
-      const icon = el.querySelector('.faq-icon');
-      a.classList.toggle('open');
-      icon.classList.toggle('open');
-    }
-</script>
+  </script>
 </body>
 </html>
