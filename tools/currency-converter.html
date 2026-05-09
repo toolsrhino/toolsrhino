@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Currency Converter — Free Online Currency Calculator | ToolsRhino</title>
-  <meta name="description" content="Free online currency converter. Convert between major world currencies with up-to-date rates. No signup required. Perfect for freelancers and travelers." />
+  <title>Currency Converter — USD to PKR & Live Exchange Rates | ToolsRhino</title>
+  <meta name="description" content="Free online currency converter with live exchange rates. Convert USD to PKR, EUR, GBP and 15+ currencies instantly. No signup required." />
   <link rel="canonical" href="https://toolsrhino.com/tools/currency-converter.html" />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
@@ -45,6 +45,65 @@
     .footer-links a{color:var(--muted);text-decoration:none;font-size:0.85rem;}
     .footer-copy{color:var(--muted);font-size:0.82rem;}
     @media(max-width:600px){nav{padding:1rem 1.5rem;}.page{padding:2rem 1.2rem 4rem;}h1{font-size:1.8rem;}.converter-row{grid-template-columns:1fr;}.swap-btn{margin:0 auto;}.popular-grid{grid-template-columns:1fr;}footer{padding:2rem 1.5rem;}}
+
+    .seo-content { margin-top: 4rem; padding-top: 3rem; border-top: 1px solid var(--border); }
+    .seo-content h2 { font-family: 'Syne', sans-serif; font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; margin-top: 2rem; }
+    .seo-content h2:first-child { margin-top: 0; }
+    .seo-content p { color: var(--muted); line-height: 1.8; margin-bottom: 1rem; font-size: 0.95rem; }
+    .faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.2rem 1.5rem; margin-bottom: 1rem; }
+    .faq-item h3 { font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 700; margin-bottom: 0.6rem; color: var(--accent2); }
+    .faq-item p { color: var(--muted); font-size: 0.88rem; line-height: 1.7; margin: 0; }
+    .related-tools { margin-top: 2rem; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; margin-top: 1rem; }
+    .related-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1rem; text-align: center; text-decoration: none; color: var(--text); font-size: 0.88rem; font-weight: 500; transition: all 0.2s; }
+    .related-card:hover { border-color: var(--accent); color: var(--accent); }
+    @media(max-width:600px) { .related-grid { grid-template-columns: 1fr; } }
+
+    .seo-section{margin-top:4rem;padding-top:3rem;border-top:1px solid var(--border);}
+    .seo-section h2{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;margin-bottom:1rem;}
+    .seo-section h3{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;margin:1.5rem 0 0.6rem;color:var(--accent2);}
+    .seo-section p{color:var(--muted);line-height:1.9;margin-bottom:1rem;font-size:0.95rem;}
+    .faq-section{margin-top:2rem;}
+    .faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:0.8rem;overflow:hidden;}
+    .faq-q{padding:1.1rem 1.3rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:500;font-size:0.92rem;background:var(--surface);}
+    .faq-q:hover{background:#161616;}
+    .faq-a{padding:0 1.3rem;max-height:0;overflow:hidden;transition:all 0.3s;color:var(--muted);font-size:0.88rem;line-height:1.7;}
+    .faq-a.open{padding:1rem 1.3rem;max-height:300px;}
+    .faq-icon{color:var(--accent);font-size:1.1rem;transition:transform 0.3s;flex-shrink:0;}
+    .faq-icon.open{transform:rotate(45deg);}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem;}
+    .related-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.2rem;text-decoration:none;color:var(--text);transition:all 0.2s;}
+    .related-card:hover{border-color:rgba(255,107,0,0.3);transform:translateY(-2px);}
+    .related-card .icon{font-size:1.3rem;margin-bottom:0.4rem;}
+    .related-card .name{font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;}
+    .related-card .desc{font-size:0.75rem;color:var(--muted);margin-top:0.2rem;}
+    @media(max-width:600px){
+      nav{padding:0.9rem 1.2rem;}
+      .page{padding:2rem 1rem 4rem;}
+      h1{font-size:1.7rem;letter-spacing:-0.5px;}
+      .subtitle{font-size:0.92rem;}
+      .stats-bar{grid-template-columns:repeat(3,1fr);gap:0.6rem;}
+      .stat-box .num{font-size:1.3rem;}
+      .input-row{grid-template-columns:1fr;}
+      .form-grid{grid-template-columns:1fr;}
+      .results-grid{grid-template-columns:1fr 1fr;}
+      .converter-grid{grid-template-columns:1fr;}
+      .row-header{grid-template-columns:2fr 1fr 1fr 0.5fr;}
+      .course-row{grid-template-columns:2fr 1fr 1fr 0.5fr;}
+      .item-row{grid-template-columns:2fr 1fr 1fr 0.5fr;}
+      .features-grid{grid-template-columns:1fr;}
+      .related-grid{grid-template-columns:1fr 1fr;}
+      .tip-buttons{grid-template-columns:repeat(3,1fr);}
+      .bmi-scale{grid-template-columns:repeat(2,1fr);}
+      .options-grid{grid-template-columns:1fr;}
+      .time-inputs{grid-template-columns:1fr 1fr 1fr;}
+      .clock-display{font-size:3rem;}
+      .popular-grid{grid-template-columns:1fr;}
+      .extra-results{grid-template-columns:1fr 1fr;}
+      footer{padding:2rem 1rem;}
+      .footer-inner{flex-direction:column;text-align:center;gap:1rem;}
+      .footer-links{flex-wrap:wrap;justify-content:center;gap:0.8rem;}
+    }
   </style>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-W5NGT3NMR8"></script>
@@ -87,13 +146,47 @@
       <div class="popular-grid" id="popularRates"></div>
     </div>
 
-    <div class="seo-content">
-      <h2>How to Use the Currency Converter</h2>
-      <p>Enter an amount, select your source currency and target currency, and the converted amount appears instantly. Rates are fetched live from a public API so you always get accurate, up-to-date conversions.</p>
-      <p>This free currency converter is ideal for freelancers quoting international clients, travelers planning budgets, and anyone sending or receiving money across borders.</p>
     </div>
-  </div>
-  <footer>
+    <div class="seo-content">
+      <h2>Free Currency Converter — Live Exchange Rates</h2>
+      <p>Our free currency converter uses live exchange rates to give you accurate conversions between major world currencies instantly. Perfect for freelancers receiving payments from international clients, travelers planning budgets, students studying abroad, and anyone sending or receiving money across borders.</p>
+      <p>The converter supports all major currencies including USD, EUR, GBP, PKR, INR, AED, SAR, CAD, AUD, JPY and more. Rates are fetched live from a public API so you always get the most current conversion rates available.</p>
+
+      <h2>USD to PKR — For Pakistani Freelancers</h2>
+      <p>If you are a Pakistani freelancer earning in US Dollars, our currency converter makes it easy to see exactly how much you are earning in Pakistani Rupees. Simply enter your dollar amount, select USD as the source currency and PKR as the target currency for an instant live conversion.</p>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <h3>How accurate are the exchange rates?</h3>
+        <p>Our rates are fetched live from a public exchange rate API and are updated regularly. They are accurate for general reference purposes. For large financial transactions we recommend checking with your bank for their exact rates as they may include fees and spreads.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What is the current USD to PKR rate?</h3>
+        <p>The USD to PKR rate changes daily. Use our live currency converter above to see the current rate. Simply select USD as the source and PKR as the target currency.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Can I convert PKR to AED?</h3>
+        <p>Yes. Select PKR as your source currency and AED as your target currency. Enter the amount you want to convert and the result appears instantly with the current live exchange rate.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Does this work on mobile?</h3>
+        <p>Yes, our currency converter works perfectly on all devices including smartphones and tablets. No app download required — just visit toolsrhino.com on your mobile browser.</p>
+      </div>
+
+      <div class="related-tools">
+        <h2>Related Free Tools</h2>
+        <div class="related-grid">
+          <a href="invoice-generator.html" class="related-card">🧾 Invoice Generator</a>
+          <a href="hourly-rate-calculator.html" class="related-card">💰 Hourly Rate Calculator</a>
+          <a href="percentage-calculator.html" class="related-card">📊 Percentage Calculator</a>
+        </div>
+      </div>
+    </div>
+  </footer>
     <div class="footer-inner">
       <a href="../index.html" class="logo"><div class="logo-icon">🦏</div><span class="logo-text">Tools<span>Rhino</span></span></a>
       <div class="footer-links"><a href="../about.html">About</a><a href="../privacy.html">Privacy</a><a href="../contact.html">Contact</a></div>
@@ -161,6 +254,13 @@
 
     populateSelects();
     fetchRates();
-  </script>
+  
+    function toggleFAQ(el) {
+      const a = el.nextElementSibling;
+      const icon = el.querySelector('.faq-icon');
+      a.classList.toggle('open');
+      icon.classList.toggle('open');
+    }
+</script>
 </body>
 </html>
