@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Password Generator — Strong Random Password Generator Free | ToolsRhino</title>
+  <meta name="description" content="Free online password generator. Generate strong, random and secure passwords instantly. Customize length and character types. No signup required." />
+  <meta name="keywords" content="password generator, strong password generator, random password generator free, secure password creator online" />
+  <link rel="canonical" href="https://toolsrhino.com/tools/password-generator.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W5NGT3NMR8"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-W5NGT3NMR8');</script>
+  <style>
+    :root{--bg:#0a0a0a;--surface:#111111;--border:#222222;--accent:#ff6b00;--accent2:#ff9a00;--text:#f0f0f0;--muted:#888888;}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:1.2rem 4rem;background:rgba(10,10,10,0.95);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;}
+    .logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;}
+    .logo-icon{width:32px;height:32px;background:var(--accent);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:1rem;}
+    .logo-text{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:var(--text);}
+    .logo-text span{color:var(--accent);}
+    .back-link{color:var(--muted);text-decoration:none;font-size:0.9rem;}
+    .page{max-width:680px;margin:0 auto;padding:3rem 2rem 6rem;}
+    .tool-badge{display:inline-block;background:rgba(255,107,0,0.1);border:1px solid rgba(255,107,0,0.2);color:var(--accent2);padding:0.3rem 0.8rem;border-radius:6px;font-size:0.75rem;font-weight:500;margin-bottom:1rem;}
+    h1{font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;letter-spacing:-1px;margin-bottom:0.6rem;}
+    .subtitle{color:var(--muted);font-size:1rem;line-height:1.6;margin-bottom:2rem;}
+    .card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:2rem;margin-bottom:1.5rem;}
+    .password-display{background:var(--bg);border:2px solid var(--border);border-radius:12px;padding:1.5rem;font-family:monospace;font-size:1.3rem;letter-spacing:2px;word-break:break-all;min-height:70px;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--accent2);margin-bottom:1rem;transition:border-color 0.2s;}
+    .password-display:hover{border-color:rgba(255,107,0,0.3);}
+    .strength-bar{height:6px;border-radius:3px;background:var(--border);margin-bottom:0.5rem;overflow:hidden;}
+    .strength-fill{height:100%;border-radius:3px;transition:all 0.3s;}
+    .strength-label{font-size:0.8rem;color:var(--muted);margin-bottom:1.2rem;}
+    .options-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem;}
+    .option-item{display:flex;align-items:center;gap:0.6rem;font-size:0.9rem;}
+    .option-item input[type="checkbox"]{width:18px;height:18px;accent-color:var(--accent);cursor:pointer;}
+    .length-row{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;}
+    .length-row label{font-size:0.85rem;color:var(--muted);white-space:nowrap;}
+    .length-row input[type="range"]{flex:1;accent-color:var(--accent);}
+    .length-val{font-family:'Syne',sans-serif;font-weight:700;color:var(--accent);min-width:30px;}
+    .btn-generate{width:100%;padding:1rem;background:var(--accent);color:white;border:none;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:500;cursor:pointer;transition:all 0.2s;margin-bottom:0.8rem;}
+    .btn-generate:hover{background:var(--accent2);}
+    .btn-copy{width:100%;padding:0.8rem;background:transparent;border:1px solid var(--border);color:var(--muted);border-radius:10px;font-family:'DM Sans',sans-serif;font-size:0.9rem;cursor:pointer;transition:all 0.2s;}
+    .btn-copy:hover{border-color:var(--accent);color:var(--accent);}
+    .multi-section{margin-top:1rem;}
+    .multi-section label{font-size:0.8rem;color:var(--muted);display:block;margin-bottom:0.5rem;}
+    .multi-passwords{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:1rem;font-family:monospace;font-size:0.85rem;color:var(--muted);line-height:2;}
+    .seo-section{margin-top:4rem;padding-top:3rem;border-top:1px solid var(--border);}
+    .seo-section h2{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;margin-bottom:1rem;}
+    .seo-section p{color:var(--muted);line-height:1.9;margin-bottom:1rem;font-size:0.95rem;}
+    .faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:0.8rem;overflow:hidden;}
+    .faq-q{padding:1rem 1.2rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:500;font-size:0.92rem;background:var(--surface);}
+    .faq-a{padding:0 1.2rem;max-height:0;overflow:hidden;transition:all 0.3s;color:var(--muted);font-size:0.88rem;line-height:1.7;}
+    .faq-a.open{padding:1rem 1.2rem;max-height:200px;}
+    .faq-icon{color:var(--accent);transition:transform 0.3s;}
+    .faq-icon.open{transform:rotate(45deg);}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem;}
+    .related-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.2rem;text-decoration:none;color:var(--text);transition:all 0.2s;}
+    .related-card:hover{border-color:rgba(255,107,0,0.3);transform:translateY(-2px);}
+    .related-card .icon{font-size:1.3rem;margin-bottom:0.4rem;}
+    .related-card .name{font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;}
+    .related-card .desc{font-size:0.75rem;color:var(--muted);margin-top:0.2rem;}
+    footer{padding:2rem 4rem;border-top:1px solid var(--border);margin-top:4rem;}
+    .footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+    .footer-links{display:flex;gap:2rem;}
+    .footer-links a{color:var(--muted);text-decoration:none;font-size:0.85rem;}
+    .footer-copy{color:var(--muted);font-size:0.82rem;}
+    @media(max-width:600px){nav{padding:1rem 1.5rem;}.page{padding:2rem 1.2rem 4rem;}h1{font-size:1.8rem;}.options-grid{grid-template-columns:1fr;}.related-grid{grid-template-columns:1fr 1fr;}footer{padding:2rem 1.5rem;}}
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="../index.html" class="logo"><div class="logo-icon">🦏</div><span class="logo-text">Tools<span>Rhino</span></span></a>
+    <a href="../index.html" class="back-link">← All Tools</a>
+  </nav>
+  <div class="page">
+    <div class="tool-badge">🔐 Security Tool</div>
+    <h1>Password Generator</h1>
+    <p class="subtitle">Generate strong, secure and random passwords instantly. Customize length and character types. Your passwords are never stored or transmitted.</p>
+    <div class="card">
+      <div class="password-display" id="passwordDisplay">Click Generate to create a password</div>
+      <div class="strength-bar"><div class="strength-fill" id="strengthFill" style="width:0%;background:var(--border);"></div></div>
+      <div class="strength-label" id="strengthLabel">Strength: —</div>
+      <div class="length-row">
+        <label>Length:</label>
+        <input type="range" id="lengthSlider" min="6" max="64" value="16" oninput="document.getElementById('lengthVal').textContent=this.value;generate()" />
+        <span class="length-val" id="lengthVal">16</span>
+      </div>
+      <div class="options-grid">
+        <label class="option-item"><input type="checkbox" id="uppercase" checked onchange="generate()" /> Uppercase (A-Z)</label>
+        <label class="option-item"><input type="checkbox" id="lowercase" checked onchange="generate()" /> Lowercase (a-z)</label>
+        <label class="option-item"><input type="checkbox" id="numbers" checked onchange="generate()" /> Numbers (0-9)</label>
+        <label class="option-item"><input type="checkbox" id="symbols" onchange="generate()" /> Symbols (!@#$)</label>
+      </div>
+      <button class="btn-generate" onclick="generate()">🔄 Generate New Password</button>
+      <button class="btn-copy" onclick="copyPassword()">📋 Copy Password</button>
+      <div class="multi-section" style="margin-top:1.5rem;">
+        <label>Generate 5 passwords at once:</label>
+        <div class="multi-passwords" id="multiPasswords">—</div>
+        <button class="btn-copy" style="margin-top:0.5rem;" onclick="generateMulti()">Generate 5 Passwords</button>
+      </div>
+    </div>
+    <div class="seo-section">
+      <h2>Why Use a Password Generator?</h2>
+      <p>Weak passwords are the number one cause of account breaches. Using a random password generator ensures your passwords are truly unpredictable — unlike passwords based on names, dates or common words that hackers can easily guess.</p>
+      <p>This password generator runs entirely in your browser. The passwords are generated using your device's cryptographic random number generator and are never sent to any server, never logged and never stored. It is completely private and secure.</p>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFAQ(this)">How long should my password be?<span class="faq-icon">+</span></div><div class="faq-a">Security experts recommend a minimum of 12 characters. 16 characters provides strong security for most accounts. For highly sensitive accounts like banking or email, use 20+ characters with all character types enabled.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFAQ(this)">Are the generated passwords safe?<span class="faq-icon">+</span></div><div class="faq-a">Yes. Passwords are generated using the browser's built-in cryptographic random number generator (crypto.getRandomValues). They are never sent to our servers, never stored and only exist in your browser memory.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFAQ(this)">Should I use a different password for every account?<span class="faq-icon">+</span></div><div class="faq-a">Absolutely yes. If you reuse a password and one account is breached, all your accounts become vulnerable. Use a unique password for every account and store them in a trusted password manager like Bitwarden or 1Password.</div></div>
+      <h2 style="margin-top:2rem;">Related Free Tools</h2>
+      <div class="related-grid">
+        <a href="word-counter.html" class="related-card"><div class="icon">📝</div><div class="name">Word Counter</div><div class="desc">Count words instantly</div></a>
+        <a href="case-converter.html" class="related-card"><div class="icon">🔤</div><div class="name">Case Converter</div><div class="desc">Change text case</div></a>
+        <a href="percentage-calculator.html" class="related-card"><div class="icon">📊</div><div class="name">Percentage Calc</div><div class="desc">Quick calculations</div></a>
+      </div>
+    </div>
+  </div>
+  <footer><div class="footer-inner"><a href="../index.html" class="logo"><div class="logo-icon">🦏</div><span class="logo-text">Tools<span>Rhino</span></span></a><div class="footer-links"><a href="../about.html">About</a><a href="../privacy.html">Privacy</a><a href="../contact.html">Contact</a></div><div class="footer-copy">© 2025 ToolsRhino</div></div></footer>
+  <script>
+    function getChars() {
+      let c = '';
+      if(document.getElementById('uppercase').checked) c += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      if(document.getElementById('lowercase').checked) c += 'abcdefghijklmnopqrstuvwxyz';
+      if(document.getElementById('numbers').checked) c += '0123456789';
+      if(document.getElementById('symbols').checked) c += '!@#$%^&*()_+-=[]{}|;:,.<>?';
+      return c || 'abcdefghijklmnopqrstuvwxyz';
+    }
+    function generatePassword(len) {
+      const chars = getChars();
+      const arr = new Uint32Array(len);
+      crypto.getRandomValues(arr);
+      return Array.from(arr).map(x => chars[x % chars.length]).join('');
+    }
+    function generate() {
+      const len = parseInt(document.getElementById('lengthSlider').value);
+      const pwd = generatePassword(len);
+      document.getElementById('passwordDisplay').textContent = pwd;
+      updateStrength(pwd);
+    }
+    function updateStrength(pwd) {
+      let score = 0;
+      if(pwd.length >= 8) score++;
+      if(pwd.length >= 12) score++;
+      if(pwd.length >= 16) score++;
+      if(/[A-Z]/.test(pwd)) score++;
+      if(/[a-z]/.test(pwd)) score++;
+      if(/[0-9]/.test(pwd)) score++;
+      if(/[^A-Za-z0-9]/.test(pwd)) score++;
+      const pct = (score/7)*100;
+      const colors = ['#ff5050','#ffb400','#ffb400','#32c864','#32c864'];
+      const labels = ['Very Weak','Weak','Fair','Strong','Very Strong'];
+      const idx = Math.min(Math.floor(score/2), 4);
+      document.getElementById('strengthFill').style.width = pct+'%';
+      document.getElementById('strengthFill').style.background = colors[idx];
+      document.getElementById('strengthLabel').textContent = 'Strength: ' + labels[idx];
+    }
+    function copyPassword() {
+      const pwd = document.getElementById('passwordDisplay').textContent;
+      if(pwd === 'Click Generate to create a password') return;
+      navigator.clipboard.writeText(pwd).then(() => {
+        const btn = event.target;
+        btn.textContent = '✅ Copied!';
+        setTimeout(() => btn.textContent = '📋 Copy Password', 2000);
+      });
+    }
+    function generateMulti() {
+      const len = parseInt(document.getElementById('lengthSlider').value);
+      const passwords = Array.from({length:5}, () => generatePassword(len)).join('\n');
+      document.getElementById('multiPasswords').textContent = passwords;
+    }
+    function toggleFAQ(el) {
+      const a = el.nextElementSibling;
+      const icon = el.querySelector('.faq-icon');
+      a.classList.toggle('open');
+      icon.classList.toggle('open');
+    }
+    generate();
+  </script>
+</body>
+</html>
