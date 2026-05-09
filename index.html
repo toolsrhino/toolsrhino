@@ -3,52 +3,502 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us | ToolsRhino</title>
-  <meta name="description" content="Get in touch with the ToolsRhino team. Suggest a new tool, report an issue, or ask a question." />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <title>ToolsRhino — Powerful Free Tools for Freelancers & Professionals</title>
+  <meta name="description" content="Free online tools for freelancers, students and professionals. Invoice generator, word counter, calculators, converters and more — all free, no signup required." />
+  <meta name="keywords" content="free online tools, freelancer tools, invoice generator, word counter, calculator, converter" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="ToolsRhino — Powerful Free Tools" />
+  <meta property="og:description" content="Free online tools for freelancers and professionals. No signup, no cost." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://toolsrhino.com" />
+  <link rel="canonical" href="https://toolsrhino.com" />
+  <meta name="google-site-verification" content="MC5LgRXabeTOb1M64g-BySwEqDL4qnLjrw0COzeD6BY" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
-    :root { --bg:#0a0a0a; --surface:#111111; --border:#222222; --accent:#ff6b00; --accent2:#ff9a00; --text:#f0f0f0; --muted:#888888; }
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body { background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif; font-weight:300; }
-    nav { display:flex; align-items:center; justify-content:space-between; padding:1.2rem 4rem; background:rgba(10,10,10,0.95); border-bottom:1px solid var(--border); }
-    .logo { display:flex; align-items:center; gap:0.6rem; text-decoration:none; }
-    .logo-icon { width:32px; height:32px; background:var(--accent); border-radius:7px; display:flex; align-items:center; justify-content:center; font-size:1rem; }
-    .logo-text { font-family:'Syne',sans-serif; font-weight:800; font-size:1.1rem; color:var(--text); }
-    .logo-text span { color:var(--accent); }
-    .back-link { color:var(--muted); text-decoration:none; font-size:0.9rem; }
-    .page { max-width:640px; margin:0 auto; padding:4rem 2rem 6rem; }
-    h1 { font-family:'Syne',sans-serif; font-size:2.5rem; font-weight:800; letter-spacing:-1px; margin-bottom:0.8rem; }
-    .subtitle { color:var(--muted); font-size:1rem; line-height:1.6; margin-bottom:3rem; }
-    .form-group { margin-bottom:1.4rem; }
-    label { display:block; font-size:0.82rem; color:var(--muted); margin-bottom:0.5rem; font-weight:500; }
-    input, textarea, select {
-      width:100%; padding:0.85rem 1.1rem;
-      background:var(--surface); border:1px solid var(--border);
-      border-radius:10px; color:var(--text);
-      font-family:'DM Sans',sans-serif; font-size:0.95rem; font-weight:300;
-      outline:none; transition:border-color 0.2s;
+    :root {
+      --bg: #0a0a0a;
+      --surface: #111111;
+      --surface2: #1a1a1a;
+      --border: #222222;
+      --accent: #ff6b00;
+      --accent2: #ff9a00;
+      --text: #f0f0f0;
+      --muted: #888888;
+      --card-hover: #161616;
     }
-    input:focus, textarea:focus, select:focus { border-color:rgba(255,107,0,0.4); }
-    textarea { height:140px; resize:vertical; line-height:1.6; }
-    select option { background:var(--surface); }
-    .btn-submit {
-      width:100%; padding:1rem; background:var(--accent); color:white;
-      border:none; border-radius:10px; font-family:'DM Sans',sans-serif;
-      font-size:1rem; font-weight:500; cursor:pointer; transition:all 0.2s; margin-top:0.5rem;
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
     }
-    .btn-submit:hover { background:var(--accent2); }
-    .success-msg { display:none; background:rgba(255,107,0,0.08); border:1px solid rgba(255,107,0,0.2); border-radius:10px; padding:1.5rem; text-align:center; margin-top:1.5rem; }
-    .success-msg h3 { font-family:'Syne',sans-serif; margin-bottom:0.5rem; }
-    .success-msg p { color:var(--muted); font-size:0.9rem; }
-    .email-alt { margin-top:2.5rem; padding-top:2rem; border-top:1px solid var(--border); text-align:center; }
-    .email-alt p { color:var(--muted); font-size:0.9rem; }
-    .email-alt a { color:var(--accent); }
-    footer { padding:2rem 4rem; border-top:1px solid var(--border); margin-top:4rem; }
-    .footer-inner { max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }
-    .footer-links { display:flex; gap:2rem; }
-    .footer-links a { color:var(--muted); text-decoration:none; font-size:0.85rem; }
-    .footer-copy { color:var(--muted); font-size:0.82rem; }
-    @media(max-width:600px){ nav{padding:1rem 1.5rem;} .page{padding:2rem 1.2rem 4rem;} h1{font-size:2rem;} footer{padding:2rem 1.5rem;} }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 4rem;
+      background: rgba(10,10,10,0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--accent);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+
+    .logo-text {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.3rem;
+      color: var(--text);
+    }
+
+    .logo-text span { color: var(--accent); }
+
+    nav ul {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    nav ul a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+
+    nav ul a:hover { color: var(--text); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 8rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255,107,0,0.12) 0%, transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,107,0,0.1);
+      border: 1px solid rgba(255,107,0,0.3);
+      color: var(--accent2);
+      padding: 0.4rem 1rem;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      margin-bottom: 2rem;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .hero h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -2px;
+      margin-bottom: 1.5rem;
+      animation: fadeUp 0.6s ease 0.1s both;
+    }
+
+    .hero h1 span {
+      color: var(--accent);
+      position: relative;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 520px;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+      animation: fadeUp 0.6s ease 0.2s both;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeUp 0.6s ease 0.3s both;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+      padding: 0.85rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent2);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(255,107,0,0.3);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text);
+      padding: 0.85rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+      border: 1px solid var(--border);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .stats {
+      display: flex;
+      gap: 3rem;
+      justify-content: center;
+      margin-top: 4rem;
+      animation: fadeUp 0.6s ease 0.4s both;
+    }
+
+    .stat { text-align: center; }
+
+    .stat-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.2rem;
+    }
+
+    /* TOOLS GRID */
+    .tools-section {
+      padding: 6rem 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .section-tag {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .section-header h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    .section-header p {
+      color: var(--muted);
+      margin-top: 0.8rem;
+      font-size: 1rem;
+    }
+
+    .category-filter {
+      display: flex;
+      gap: 0.6rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+
+    .filter-btn {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 0.4rem 1.1rem;
+      border-radius: 100px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: white;
+    }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .tool-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-decoration: none;
+      color: var(--text);
+      transition: all 0.25s;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tool-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+
+    .tool-card:hover {
+      background: var(--card-hover);
+      border-color: rgba(255,107,0,0.3);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+    }
+
+    .tool-card:hover::before { opacity: 1; }
+
+    .tool-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(255,107,0,0.1);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+    }
+
+    .tool-name {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .tool-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .tool-tag {
+      display: inline-block;
+      background: rgba(255,107,0,0.08);
+      color: var(--accent2);
+      font-size: 0.72rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-weight: 500;
+      align-self: flex-start;
+    }
+
+    /* WHY SECTION */
+    .why-section {
+      padding: 6rem 4rem;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .why-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .why-text h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 1.5rem;
+    }
+
+    .why-text p {
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .features-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 0.95rem;
+    }
+
+    .feature-check {
+      width: 22px;
+      height: 22px;
+      background: rgba(255,107,0,0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-size: 0.7rem;
+      flex-shrink: 0;
+    }
+
+    .why-visual {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .mini-stat {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .mini-stat-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .mini-stat-label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.3rem;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 3rem 4rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--text); }
+
+    .footer-copy {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      nav ul { display: none; }
+      .tools-section { padding: 4rem 1.5rem; }
+      .why-section { padding: 4rem 1.5rem; }
+      .why-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .why-visual { grid-template-columns: 1fr 1fr; }
+      footer { padding: 2rem 1.5rem; }
+      .footer-inner { flex-direction: column; text-align: center; }
+      .stats { gap: 1.5rem; }
+    }
   </style>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-W5NGT3NMR8"></script>
@@ -60,68 +510,245 @@
   </script>
 </head>
 <body>
+
+  <!-- NAV -->
   <nav>
-    <a href="index.html" class="logo"><div class="logo-icon">🦏</div><span class="logo-text">Tools<span>Rhino</span></span></a>
-    <a href="index.html" class="back-link">← Home</a>
+    <a href="/" class="logo">
+      <div class="logo-icon">🦏</div>
+      <span class="logo-text">Tools<span>Rhino</span></span>
+    </a>
+    <ul>
+      <li><a href="#tools">All Tools</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
   </nav>
 
-  <div class="page">
-    <h1>Get in Touch</h1>
-    <p class="subtitle">Have a tool idea? Found a bug? Want to say hello? We read every message and usually reply within 24 hours.</p>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">🦏 Free · Fast · No Signup Required</div>
+    <h1>Powerful Tools for<br /><span>Serious Freelancers</span></h1>
+    <p>Everything a freelancer, student or professional needs — calculators, generators, converters and more. All free, forever.</p>
+    <div class="hero-cta">
+      <a href="#tools" class="btn-primary">Explore All Tools →</a>
+      <a href="about.html" class="btn-ghost">About ToolsRhino</a>
+    </div>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-num">20+</div>
+        <div class="stat-label">Free Tools</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Free Forever</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">0</div>
+        <div class="stat-label">Signup Required</div>
+      </div>
+    </div>
+  </section>
 
-    <div class="form-group">
-      <label>Your Name</label>
-      <input type="text" id="name" placeholder="Your full name" />
-    </div>
-    <div class="form-group">
-      <label>Email Address</label>
-      <input type="email" id="email" placeholder="your@email.com" />
-    </div>
-    <div class="form-group">
-      <label>Subject</label>
-      <select id="subject">
-        <option value="">Select a subject...</option>
-        <option value="tool-suggestion">Suggest a New Tool</option>
-        <option value="bug-report">Report a Bug</option>
-        <option value="general">General Inquiry</option>
-        <option value="other">Other</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label>Message</label>
-      <textarea id="message" placeholder="Write your message here..."></textarea>
-    </div>
-    <button class="btn-submit" onclick="submitForm()">Send Message →</button>
-
-    <div class="success-msg" id="successMsg">
-      <h3>✅ Message Sent!</h3>
-      <p>Thanks for reaching out. We'll get back to you within 24 hours.</p>
+  <!-- TOOLS -->
+  <section class="tools-section" id="tools">
+    <div class="section-header">
+      <div class="section-tag">🛠 The Toolkit</div>
+      <h2>All Tools, Zero Cost</h2>
+      <p>Built for freelancers, students and professionals who get things done.</p>
     </div>
 
-    <div class="email-alt">
-      <p>Or email us directly at <a href="mailto:contact@toolsrhino.com">contact@toolsrhino.com</a></p>
+    <div class="category-filter">
+      <button class="filter-btn active" onclick="filterTools('all', this)">All Tools</button>
+      <button class="filter-btn" onclick="filterTools('freelancer', this)">Freelancer</button>
+      <button class="filter-btn" onclick="filterTools('calculator', this)">Calculators</button>
+      <button class="filter-btn" onclick="filterTools('writing', this)">Writing</button>
+      <button class="filter-btn" onclick="filterTools('converter', this)">Converters</button>
     </div>
-  </div>
 
+    <div class="tools-grid" id="toolsGrid">
+
+      <a href="tools/invoice-generator.html" class="tool-card" data-cat="freelancer">
+        <div class="tool-icon">🧾</div>
+        <div class="tool-name">Invoice Generator</div>
+        <div class="tool-desc">Create professional invoices in seconds. Download as PDF instantly. No account needed.</div>
+        <span class="tool-tag">Freelancer</span>
+      </a>
+
+      <a href="tools/hourly-rate-calculator.html" class="tool-card" data-cat="freelancer calculator">
+        <div class="tool-icon">💰</div>
+        <div class="tool-name">Hourly Rate Calculator</div>
+        <div class="tool-desc">Find out exactly what to charge clients. Enter your expenses and income goal — get your ideal rate.</div>
+        <span class="tool-tag">Freelancer</span>
+      </a>
+
+      <a href="tools/word-counter.html" class="tool-card" data-cat="writing">
+        <div class="tool-icon">📝</div>
+        <div class="tool-name">Word Counter</div>
+        <div class="tool-desc">Count words, characters, sentences and paragraphs instantly. Great for articles, essays and proposals.</div>
+        <span class="tool-tag">Writing</span>
+      </a>
+
+      <a href="tools/percentage-calculator.html" class="tool-card" data-cat="calculator">
+        <div class="tool-icon">📊</div>
+        <div class="tool-name">Percentage Calculator</div>
+        <div class="tool-desc">Calculate percentages, discounts, tax, tips and more. Simple, fast and accurate.</div>
+        <span class="tool-tag">Calculator</span>
+      </a>
+
+      <a href="tools/gpa-calculator.html" class="tool-card" data-cat="calculator">
+        <div class="tool-icon">🎓</div>
+        <div class="tool-name">GPA Calculator</div>
+        <div class="tool-desc">Calculate your GPA instantly. Supports 4.0 and percentage based grading systems.</div>
+        <span class="tool-tag">Calculator</span>
+      </a>
+
+      <a href="tools/currency-converter.html" class="tool-card" data-cat="converter">
+        <div class="tool-icon">💱</div>
+        <div class="tool-name">Currency Converter</div>
+        <div class="tool-desc">Convert between currencies with live rates. Perfect for international freelancers and remote workers.</div>
+        <span class="tool-tag">Converter</span>
+      </a>
+
+      <a href="tools/age-calculator.html" class="tool-card" data-cat="calculator">
+        <div class="tool-icon">🎂</div>
+        <div class="tool-name">Age Calculator</div>
+        <div class="tool-desc">Calculate exact age in years, months and days. Also shows next birthday countdown.</div>
+        <span class="tool-tag">Calculator</span>
+      </a>
+
+      <a href="tools/tip-calculator.html" class="tool-card" data-cat="calculator">
+        <div class="tool-icon">🍽️</div>
+        <div class="tool-name">Tip Calculator</div>
+        <div class="tool-desc">Split bills and calculate tips easily. Enter the bill amount, tip % and number of people.</div>
+        <span class="tool-tag">Calculator</span>
+      </a>
+
+      <a href="tools/case-converter.html" class="tool-card" data-cat="writing converter">
+        <div class="tool-icon">🔤</div>
+        <div class="tool-name">Case Converter</div>
+        <div class="tool-desc">Convert text to UPPER CASE, lower case, Title Case or sentence case instantly.</div>
+        <span class="tool-tag">Writing</span>
+      </a>
+
+      <a href="tools/loan-calculator.html" class="tool-card" data-cat="calculator">
+        <div class="tool-icon">🏦</div>
+        <div class="tool-name">Loan Calculator</div>
+        <div class="tool-desc">Calculate monthly payments, total interest and full loan breakdown for any loan amount.</div>
+        <span class="tool-tag">Calculator</span>
+      </a>
+
+
+      <a href="tools/bmi-calculator.html" class="tool-card" data-cat="calculator">
+        <div class="tool-icon">⚖️</div>
+        <div class="tool-name">BMI Calculator</div>
+        <div class="tool-desc">Calculate your Body Mass Index instantly. Supports metric and imperial units. Find your healthy weight range.</div>
+        <span class="tool-tag">Calculator</span>
+      </a>
+
+      <a href="tools/password-generator.html" class="tool-card" data-cat="writing">
+        <div class="tool-icon">🔐</div>
+        <div class="tool-name">Password Generator</div>
+        <div class="tool-desc">Generate strong, random and secure passwords instantly. Customize length and character types. Never stored.</div>
+        <span class="tool-tag">Security</span>
+      </a>
+
+      <a href="tools/stopwatch.html" class="tool-card" data-cat="calculator">
+        <div class="tool-icon">⏱️</div>
+        <div class="tool-name">Stopwatch & Timer</div>
+        <div class="tool-desc">Free online stopwatch with lap times and countdown timer. Perfect for workouts, study sessions and cooking.</div>
+        <span class="tool-tag">Time</span>
+      </a>
+
+      <a href="tools/number-to-words.html" class="tool-card" data-cat="converter">
+        <div class="tool-icon">🔢</div>
+        <div class="tool-name">Number to Words</div>
+        <div class="tool-desc">Convert any number to words instantly. Perfect for cheques, invoices and legal documents. Pakistani Rupees format included.</div>
+        <span class="tool-tag">Converter</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- WHY SECTION -->
+  <section class="why-section">
+    <div class="why-inner">
+      <div class="why-text">
+        <div class="section-tag">🦏 Why ToolsRhino</div>
+        <h2>Built for People Who Work Hard</h2>
+        <p>We built ToolsRhino because we were tired of tools that ask for signups, show paywalls, or slow you down. Every tool here is free, fast, and works instantly.</p>
+        <div class="features-list">
+          <div class="feature-item">
+            <div class="feature-check">✓</div>
+            No signup or account required — ever
+          </div>
+          <div class="feature-item">
+            <div class="feature-check">✓</div>
+            Works on any device — mobile, tablet, desktop
+          </div>
+          <div class="feature-item">
+            <div class="feature-check">✓</div>
+            No data stored — your privacy is protected
+          </div>
+          <div class="feature-item">
+            <div class="feature-check">✓</div>
+            New tools added every week
+          </div>
+          <div class="feature-item">
+            <div class="feature-check">✓</div>
+            100% free forever — supported by non-intrusive ads
+          </div>
+        </div>
+      </div>
+      <div class="why-visual">
+        <div class="mini-stat">
+          <div class="mini-stat-num">20+</div>
+          <div class="mini-stat-label">Tools Available</div>
+        </div>
+        <div class="mini-stat">
+          <div class="mini-stat-num">0ms</div>
+          <div class="mini-stat-label">Signup Time</div>
+        </div>
+        <div class="mini-stat">
+          <div class="mini-stat-num">$0</div>
+          <div class="mini-stat-label">Cost Forever</div>
+        </div>
+        <div class="mini-stat">
+          <div class="mini-stat-num">100%</div>
+          <div class="mini-stat-label">Private & Safe</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
-      <a href="index.html" class="logo"><div class="logo-icon">🦏</div><span class="logo-text">Tools<span>Rhino</span></span></a>
-      <div class="footer-links"><a href="about.html">About</a><a href="privacy.html">Privacy Policy</a><a href="contact.html">Contact</a></div>
-      <div class="footer-copy">© 2025 ToolsRhino</div>
+      <a href="/" class="logo">
+        <div class="logo-icon">🦏</div>
+        <span class="logo-text">Tools<span>Rhino</span></span>
+      </a>
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="disclaimer.html">Disclaimer</a>
+      </div>
+      <div class="footer-copy">© 2025 ToolsRhino. All rights reserved.</div>
     </div>
   </footer>
 
   <script>
-    function submitForm() {
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const message = document.getElementById('message').value.trim();
-      if (!name || !email || !message) { alert('Please fill in all required fields.'); return; }
-      document.getElementById('successMsg').style.display = 'block';
-      document.getElementById('name').value = '';
-      document.getElementById('email').value = '';
-      document.getElementById('message').value = '';
+    function filterTools(cat, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.tool-card').forEach(card => {
+        if (cat === 'all' || card.dataset.cat.includes(cat)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
     }
   </script>
+
 </body>
 </html>
