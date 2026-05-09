@@ -489,15 +489,47 @@
 
     /* RESPONSIVE */
     @media (max-width: 768px) {
-      nav { padding: 1rem 1.5rem; }
+      /* NAV */
+      nav { padding: 0.9rem 1.2rem; }
       nav ul { display: none; }
-      .tools-section { padding: 4rem 1.5rem; }
-      .why-section { padding: 4rem 1.5rem; }
-      .why-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+
+      /* HERO */
+      .hero { padding: 6rem 1.2rem 3rem; }
+      .hero h1 { font-size: 2.4rem; letter-spacing: -1px; }
+      .hero p { font-size: 1rem; padding: 0 0.5rem; }
+      .hero-cta { flex-direction: column; align-items: center; gap: 0.8rem; }
+      .hero-cta a { width: 100%; text-align: center; }
+      .stats { gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
+      .stat-num { font-size: 1.5rem; }
+
+      /* TOOLS SECTION */
+      .tools-section { padding: 3rem 1.2rem; }
+      .section-header h2 { font-size: 1.8rem; }
+      .category-filter { gap: 0.4rem; }
+      .filter-btn { padding: 0.35rem 0.8rem; font-size: 0.78rem; }
+      .tools-grid { grid-template-columns: 1fr; gap: 0.9rem; }
+      .tool-card { padding: 1.2rem; }
+
+      /* WHY SECTION */
+      .why-section { padding: 3rem 1.2rem; }
+      .why-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .why-text h2 { font-size: 1.8rem; }
+      .why-visual { grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+      .mini-stat { padding: 1rem; }
+      .mini-stat-num { font-size: 1.5rem; }
+
+      /* FOOTER */
+      footer { padding: 2rem 1.2rem; }
+      .footer-inner { flex-direction: column; text-align: center; gap: 1.2rem; }
+      .footer-links { flex-wrap: wrap; justify-content: center; gap: 1rem; }
+    }
+
+    @media (max-width: 400px) {
+      .hero h1 { font-size: 2rem; }
+      .tools-grid { grid-template-columns: 1fr; }
       .why-visual { grid-template-columns: 1fr 1fr; }
-      footer { padding: 2rem 1.5rem; }
-      .footer-inner { flex-direction: column; text-align: center; }
-      .stats { gap: 1.5rem; }
+      .stats { gap: 1rem; }
+      .stat { min-width: 70px; }
     }
   </style>
   <!-- Google Analytics -->
