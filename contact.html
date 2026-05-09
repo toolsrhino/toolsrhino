@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us | ToolsRhino</title>
-  <meta name="description" content="Get in touch with the ToolsRhino team. Suggest a new tool, report an issue, or ask a question." />
+  <title>About ToolsRhino — Free Online Tools for Freelancers & Professionals</title>
+  <meta name="description" content="Learn about ToolsRhino — a free collection of online tools built for freelancers, students and professionals. No signup, no cost, no nonsense." />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     :root { --bg:#0a0a0a; --surface:#111111; --border:#222222; --accent:#ff6b00; --accent2:#ff9a00; --text:#f0f0f0; --muted:#888888; }
@@ -16,39 +16,29 @@
     .logo-text { font-family:'Syne',sans-serif; font-weight:800; font-size:1.1rem; color:var(--text); }
     .logo-text span { color:var(--accent); }
     .back-link { color:var(--muted); text-decoration:none; font-size:0.9rem; }
-    .page { max-width:640px; margin:0 auto; padding:4rem 2rem 6rem; }
-    h1 { font-family:'Syne',sans-serif; font-size:2.5rem; font-weight:800; letter-spacing:-1px; margin-bottom:0.8rem; }
-    .subtitle { color:var(--muted); font-size:1rem; line-height:1.6; margin-bottom:3rem; }
-    .form-group { margin-bottom:1.4rem; }
-    label { display:block; font-size:0.82rem; color:var(--muted); margin-bottom:0.5rem; font-weight:500; }
-    input, textarea, select {
-      width:100%; padding:0.85rem 1.1rem;
-      background:var(--surface); border:1px solid var(--border);
-      border-radius:10px; color:var(--text);
-      font-family:'DM Sans',sans-serif; font-size:0.95rem; font-weight:300;
-      outline:none; transition:border-color 0.2s;
-    }
-    input:focus, textarea:focus, select:focus { border-color:rgba(255,107,0,0.4); }
-    textarea { height:140px; resize:vertical; line-height:1.6; }
-    select option { background:var(--surface); }
-    .btn-submit {
-      width:100%; padding:1rem; background:var(--accent); color:white;
-      border:none; border-radius:10px; font-family:'DM Sans',sans-serif;
-      font-size:1rem; font-weight:500; cursor:pointer; transition:all 0.2s; margin-top:0.5rem;
-    }
-    .btn-submit:hover { background:var(--accent2); }
-    .success-msg { display:none; background:rgba(255,107,0,0.08); border:1px solid rgba(255,107,0,0.2); border-radius:10px; padding:1.5rem; text-align:center; margin-top:1.5rem; }
-    .success-msg h3 { font-family:'Syne',sans-serif; margin-bottom:0.5rem; }
-    .success-msg p { color:var(--muted); font-size:0.9rem; }
-    .email-alt { margin-top:2.5rem; padding-top:2rem; border-top:1px solid var(--border); text-align:center; }
-    .email-alt p { color:var(--muted); font-size:0.9rem; }
-    .email-alt a { color:var(--accent); }
+    .page { max-width:760px; margin:0 auto; padding:4rem 2rem 6rem; }
+    .hero-about { text-align:center; margin-bottom:4rem; }
+    .big-icon { font-size:4rem; margin-bottom:1.5rem; }
+    h1 { font-family:'Syne',sans-serif; font-size:2.5rem; font-weight:800; letter-spacing:-1px; margin-bottom:1rem; }
+    .hero-about p { color:var(--muted); font-size:1.1rem; line-height:1.8; max-width:560px; margin:0 auto; }
+    .values-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin:3rem 0; }
+    .value-card { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.5rem; }
+    .value-icon { font-size:1.5rem; margin-bottom:0.8rem; }
+    .value-card h3 { font-family:'Syne',sans-serif; font-weight:700; margin-bottom:0.5rem; }
+    .value-card p { color:var(--muted); font-size:0.88rem; line-height:1.6; }
+    h2 { font-family:'Syne',sans-serif; font-size:1.6rem; font-weight:800; letter-spacing:-0.5px; margin:3rem 0 1rem; }
+    .prose { color:var(--muted); line-height:1.8; font-size:0.95rem; margin-bottom:1rem; }
+    .cta-box { background:rgba(255,107,0,0.07); border:1px solid rgba(255,107,0,0.2); border-radius:14px; padding:2.5rem; text-align:center; margin-top:3rem; }
+    .cta-box h3 { font-family:'Syne',sans-serif; font-size:1.5rem; font-weight:800; margin-bottom:0.8rem; }
+    .cta-box p { color:var(--muted); margin-bottom:1.5rem; }
+    .btn-primary { background:var(--accent); color:white; padding:0.85rem 2rem; border-radius:8px; text-decoration:none; font-weight:500; font-size:0.95rem; display:inline-block; transition:all 0.2s; }
+    .btn-primary:hover { background:var(--accent2); }
     footer { padding:2rem 4rem; border-top:1px solid var(--border); margin-top:4rem; }
     .footer-inner { max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }
     .footer-links { display:flex; gap:2rem; }
     .footer-links a { color:var(--muted); text-decoration:none; font-size:0.85rem; }
     .footer-copy { color:var(--muted); font-size:0.82rem; }
-    @media(max-width:600px){ nav{padding:1rem 1.5rem;} .page{padding:2rem 1.2rem 4rem;} h1{font-size:2rem;} footer{padding:2rem 1.5rem;} }
+    @media(max-width:600px){ nav{padding:1rem 1.5rem;} .page{padding:2rem 1.2rem 4rem;} .values-grid{grid-template-columns:1fr;} h1{font-size:2rem;} footer{padding:2rem 1.5rem;} }
   </style>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-W5NGT3NMR8"></script>
@@ -66,40 +56,47 @@
   </nav>
 
   <div class="page">
-    <h1>Get in Touch</h1>
-    <p class="subtitle">Have a tool idea? Found a bug? Want to say hello? We read every message and usually reply within 24 hours.</p>
-
-    <div class="form-group">
-      <label>Your Name</label>
-      <input type="text" id="name" placeholder="Your full name" />
-    </div>
-    <div class="form-group">
-      <label>Email Address</label>
-      <input type="email" id="email" placeholder="your@email.com" />
-    </div>
-    <div class="form-group">
-      <label>Subject</label>
-      <select id="subject">
-        <option value="">Select a subject...</option>
-        <option value="tool-suggestion">Suggest a New Tool</option>
-        <option value="bug-report">Report a Bug</option>
-        <option value="general">General Inquiry</option>
-        <option value="other">Other</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label>Message</label>
-      <textarea id="message" placeholder="Write your message here..."></textarea>
-    </div>
-    <button class="btn-submit" onclick="submitForm()">Send Message →</button>
-
-    <div class="success-msg" id="successMsg">
-      <h3>✅ Message Sent!</h3>
-      <p>Thanks for reaching out. We'll get back to you within 24 hours.</p>
+    <div class="hero-about">
+      <div class="big-icon">🦏</div>
+      <h1>Built for People Who Get Things Done</h1>
+      <p>ToolsRhino is a free collection of online tools for freelancers, students and professionals. No fluff, no paywalls, no signup — just powerful tools that work instantly.</p>
     </div>
 
-    <div class="email-alt">
-      <p>Or email us directly at <a href="mailto:contact@toolsrhino.com">contact@toolsrhino.com</a></p>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon">⚡</div>
+        <h3>Instant Results</h3>
+        <p>Every tool gives you results the moment you start typing. No buttons to click, no waiting, no loading screens.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🔒</div>
+        <h3>Your Data Stays Private</h3>
+        <p>All tools run in your browser. Your text and data are never sent to our servers or shared with anyone.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">💸</div>
+        <h3>100% Free Forever</h3>
+        <p>Every tool is completely free. We earn through non-intrusive advertising so you never have to pay a cent.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">📱</div>
+        <h3>Works Everywhere</h3>
+        <p>Designed to work perfectly on mobile, tablet and desktop. Use your tools anywhere, anytime.</p>
+      </div>
+    </div>
+
+    <h2>Our Story</h2>
+    <p class="prose">ToolsRhino was built out of frustration. We were tired of searching for a simple tool online, only to land on websites that demanded signups, showed pop-ups, or put basic features behind a paywall.</p>
+    <p class="prose">So we built ToolsRhino — a place where every tool is free, fast, and works without any fuss. Like a rhino, our tools are strong, reliable, and get the job done without any drama.</p>
+    <p class="prose">We add new tools every week based on what our users need. If you need a tool we don't have yet, we would love to hear from you.</p>
+
+    <h2>Our Mission</h2>
+    <p class="prose">To build the most useful collection of free online tools for freelancers, students and professionals worldwide — and to keep them free forever.</p>
+
+    <div class="cta-box">
+      <h3>Ready to Get Started?</h3>
+      <p>Explore our full collection of free tools — no signup, no cost.</p>
+      <a href="index.html#tools" class="btn-primary">Browse All Tools →</a>
     </div>
   </div>
 
@@ -110,18 +107,5 @@
       <div class="footer-copy">© 2025 ToolsRhino</div>
     </div>
   </footer>
-
-  <script>
-    function submitForm() {
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const message = document.getElementById('message').value.trim();
-      if (!name || !email || !message) { alert('Please fill in all required fields.'); return; }
-      document.getElementById('successMsg').style.display = 'block';
-      document.getElementById('name').value = '';
-      document.getElementById('email').value = '';
-      document.getElementById('message').value = '';
-    }
-  </script>
 </body>
 </html>
