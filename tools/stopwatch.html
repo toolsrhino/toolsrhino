@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Stopwatch & Timer — Free Stopwatch Tool | ToolsRhino</title>
+  <meta name="description" content="Free online stopwatch and countdown timer. Start, stop, lap and reset. Works on all devices. No signup required." />
+  <meta name="keywords" content="online stopwatch, free stopwatch, countdown timer online, stopwatch with lap, timer online free" />
+  <link rel="canonical" href="https://toolsrhino.com/tools/stopwatch.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W5NGT3NMR8"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-W5NGT3NMR8');</script>
+  <style>
+    :root{--bg:#0a0a0a;--surface:#111111;--border:#222222;--accent:#ff6b00;--accent2:#ff9a00;--text:#f0f0f0;--muted:#888888;}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:1.2rem 4rem;background:rgba(10,10,10,0.95);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;}
+    .logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;}
+    .logo-icon{width:32px;height:32px;background:var(--accent);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:1rem;}
+    .logo-text{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:var(--text);}
+    .logo-text span{color:var(--accent);}
+    .back-link{color:var(--muted);text-decoration:none;font-size:0.9rem;}
+    .page{max-width:680px;margin:0 auto;padding:3rem 2rem 6rem;}
+    .tool-badge{display:inline-block;background:rgba(255,107,0,0.1);border:1px solid rgba(255,107,0,0.2);color:var(--accent2);padding:0.3rem 0.8rem;border-radius:6px;font-size:0.75rem;font-weight:500;margin-bottom:1rem;}
+    h1{font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;letter-spacing:-1px;margin-bottom:0.6rem;}
+    .subtitle{color:var(--muted);font-size:1rem;line-height:1.6;margin-bottom:2rem;}
+    .tab-row{display:flex;gap:0.5rem;margin-bottom:2rem;}
+    .tab-btn{flex:1;padding:0.7rem;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--muted);cursor:pointer;font-family:'DM Sans',sans-serif;font-size:0.9rem;transition:all 0.2s;}
+    .tab-btn.active{background:var(--accent);border-color:var(--accent);color:white;}
+    .clock-display{font-family:'Syne',sans-serif;font-size:5rem;font-weight:800;text-align:center;color:var(--accent);letter-spacing:4px;padding:2rem;background:var(--surface);border-radius:16px;border:1px solid var(--border);margin-bottom:1.5rem;}
+    .btn-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.8rem;margin-bottom:1.5rem;}
+    .ctrl-btn{padding:0.9rem;border-radius:10px;border:none;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:500;cursor:pointer;transition:all 0.2s;}
+    .btn-start{background:var(--accent);color:white;}
+    .btn-start:hover{background:var(--accent2);}
+    .btn-stop{background:rgba(255,80,80,0.15);color:#ff5050;border:1px solid rgba(255,80,80,0.3);}
+    .btn-stop:hover{background:rgba(255,80,80,0.25);}
+    .btn-lap{background:var(--surface);color:var(--text);border:1px solid var(--border);}
+    .btn-lap:hover{border-color:var(--accent);color:var(--accent);}
+    .btn-reset{background:var(--surface);color:var(--muted);border:1px solid var(--border);grid-column:1/-1;}
+    .laps-list{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1rem;max-height:200px;overflow-y:auto;}
+    .lap-item{display:flex;justify-content:space-between;padding:0.5rem 0;border-bottom:1px solid var(--border);font-size:0.9rem;color:var(--muted);}
+    .lap-item:last-child{border-bottom:none;}
+    .lap-num{color:var(--accent2);font-weight:500;}
+    .timer-setup{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.5rem;margin-bottom:1rem;}
+    .time-inputs{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.8rem;margin-bottom:1rem;}
+    .time-input-group{text-align:center;}
+    .time-input-group label{display:block;font-size:0.75rem;color:var(--muted);margin-bottom:0.4rem;}
+    .time-input-group input{width:100%;padding:0.7rem;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:700;text-align:center;outline:none;}
+    .seo-section{margin-top:4rem;padding-top:3rem;border-top:1px solid var(--border);}
+    .seo-section h2{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;margin-bottom:1rem;}
+    .seo-section p{color:var(--muted);line-height:1.9;margin-bottom:1rem;font-size:0.95rem;}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem;}
+    .related-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.2rem;text-decoration:none;color:var(--text);transition:all 0.2s;}
+    .related-card:hover{border-color:rgba(255,107,0,0.3);transform:translateY(-2px);}
+    .related-card .icon{font-size:1.3rem;margin-bottom:0.4rem;}
+    .related-card .name{font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;}
+    .related-card .desc{font-size:0.75rem;color:var(--muted);margin-top:0.2rem;}
+    footer{padding:2rem 4rem;border-top:1px solid var(--border);margin-top:4rem;}
+    .footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+    .footer-links{display:flex;gap:2rem;}
+    .footer-links a{color:var(--muted);text-decoration:none;font-size:0.85rem;}
+    .footer-copy{color:var(--muted);font-size:0.82rem;}
+    @media(max-width:600px){nav{padding:1rem 1.5rem;}.page{padding:2rem 1.2rem 4rem;}h1{font-size:1.8rem;}.clock-display{font-size:3.5rem;}.related-grid{grid-template-columns:1fr 1fr;}footer{padding:2rem 1.5rem;}}
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="../index.html" class="logo"><div class="logo-icon">🦏</div><span class="logo-text">Tools<span>Rhino</span></span></a>
+    <a href="../index.html" class="back-link">← All Tools</a>
+  </nav>
+  <div class="page">
+    <div class="tool-badge">⏱️ Time Tool</div>
+    <h1>Stopwatch & Timer</h1>
+    <p class="subtitle">Free online stopwatch with lap times and countdown timer. Works on all devices. No signup required.</p>
+    <div class="tab-row">
+      <button class="tab-btn active" onclick="showTab('stopwatch',this)">⏱ Stopwatch</button>
+      <button class="tab-btn" onclick="showTab('timer',this)">⏳ Countdown Timer</button>
+    </div>
+
+    <!-- STOPWATCH -->
+    <div id="stopwatchTab">
+      <div class="clock-display" id="swDisplay">00:00:00.0</div>
+      <div class="btn-row">
+        <button class="ctrl-btn btn-start" onclick="swStart()">▶ Start</button>
+        <button class="ctrl-btn btn-stop" onclick="swStop()">⏸ Stop</button>
+        <button class="ctrl-btn btn-lap" onclick="swLap()">🏁 Lap</button>
+        <button class="ctrl-btn btn-reset" onclick="swReset()">↺ Reset</button>
+      </div>
+      <div class="laps-list" id="lapsList" style="display:none;"></div>
+    </div>
+
+    <!-- TIMER -->
+    <div id="timerTab" style="display:none;">
+      <div class="timer-setup">
+        <div class="time-inputs">
+          <div class="time-input-group"><label>Hours</label><input type="number" id="timerH" min="0" max="23" value="0" placeholder="00" /></div>
+          <div class="time-input-group"><label>Minutes</label><input type="number" id="timerM" min="0" max="59" value="5" placeholder="00" /></div>
+          <div class="time-input-group"><label>Seconds</label><input type="number" id="timerS" min="0" max="59" value="0" placeholder="00" /></div>
+        </div>
+      </div>
+      <div class="clock-display" id="timerDisplay">00:05:00</div>
+      <div class="btn-row">
+        <button class="ctrl-btn btn-start" onclick="timerStart()">▶ Start</button>
+        <button class="ctrl-btn btn-stop" onclick="timerStop()">⏸ Pause</button>
+        <button class="ctrl-btn btn-reset" onclick="timerReset()" style="grid-column:1/-1;">↺ Reset</button>
+      </div>
+    </div>
+
+    <div class="seo-section">
+      <h2>Free Online Stopwatch & Countdown Timer</h2>
+      <p>ToolsRhino's free online stopwatch is perfect for timing workouts, study sessions, cooking, sports activities and any task that needs accurate time tracking. The lap feature lets you record split times for running and sports.</p>
+      <p>The countdown timer is ideal for Pomodoro study sessions, cooking timers, presentation practice and meeting management. Set any hours, minutes and seconds combination and start counting down instantly.</p>
+      <div class="related-grid" style="margin-top:2rem;">
+        <a href="age-calculator.html" class="related-card"><div class="icon">🎂</div><div class="name">Age Calculator</div><div class="desc">Find your exact age</div></a>
+        <a href="word-counter.html" class="related-card"><div class="icon">📝</div><div class="name">Word Counter</div><div class="desc">Count words instantly</div></a>
+        <a href="tip-calculator.html" class="related-card"><div class="icon">🍽️</div><div class="name">Tip Calculator</div><div class="desc">Split bills easily</div></a>
+      </div>
+    </div>
+  </div>
+  <footer><div class="footer-inner"><a href="../index.html" class="logo"><div class="logo-icon">🦏</div><span class="logo-text">Tools<span>Rhino</span></span></a><div class="footer-links"><a href="../about.html">About</a><a href="../privacy.html">Privacy</a><a href="../contact.html">Contact</a></div><div class="footer-copy">© 2025 ToolsRhino</div></div></footer>
+  <script>
+    // STOPWATCH
+    let swMs=0, swRunning=false, swInterval=null, laps=[];
+    function swFormat(ms){
+      const h=Math.floor(ms/3600000), m=Math.floor((ms%3600000)/60000),
+            s=Math.floor((ms%60000)/1000), d=Math.floor((ms%1000)/100);
+      return `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}.${d}`;
+    }
+    function swStart(){if(!swRunning){swRunning=true;const start=Date.now()-swMs;swInterval=setInterval(()=>{swMs=Date.now()-start;document.getElementById('swDisplay').textContent=swFormat(swMs);},100);}}
+    function swStop(){swRunning=false;clearInterval(swInterval);}
+    function swLap(){if(swRunning){laps.push(swMs);const el=document.getElementById('lapsList');el.style.display='block';el.innerHTML=laps.map((l,i)=>`<div class="lap-item"><span class="lap-num">Lap ${i+1}</span><span>${swFormat(l)}</span></div>`).reverse().join('');}}
+    function swReset(){swStop();swMs=0;laps=[];document.getElementById('swDisplay').textContent='00:00:00.0';document.getElementById('lapsList').style.display='none';document.getElementById('lapsList').innerHTML='';}
+
+    // TIMER
+    let timerSecs=0, timerRunning=false, timerInterval=null;
+    function timerFormat(s){const h=Math.floor(s/3600),m=Math.floor((s%3600)/60),sec=s%60;return `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(sec).padStart(2,'0')}`;}
+    function timerStart(){
+      if(!timerRunning){
+        if(timerSecs===0){timerSecs=parseInt(document.getElementById('timerH').value||0)*3600+parseInt(document.getElementById('timerM').value||0)*60+parseInt(document.getElementById('timerS').value||0);}
+        if(timerSecs<=0)return;
+        timerRunning=true;
+        timerInterval=setInterval(()=>{timerSecs--;document.getElementById('timerDisplay').textContent=timerFormat(timerSecs);if(timerSecs<=0){timerStop();document.getElementById('timerDisplay').textContent='⏰ DONE!';document.getElementById('timerDisplay').style.color='var(--accent2)';}},1000);
+      }
+    }
+    function timerStop(){timerRunning=false;clearInterval(timerInterval);}
+    function timerReset(){timerStop();timerSecs=0;document.getElementById('timerDisplay').textContent='00:00:00';document.getElementById('timerDisplay').style.color='var(--accent)';}
+    function showTab(tab, btn){
+      document.getElementById('stopwatchTab').style.display=tab==='stopwatch'?'block':'none';
+      document.getElementById('timerTab').style.display=tab==='timer'?'block':'none';
+      document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+  </script>
+</body>
+</html>
