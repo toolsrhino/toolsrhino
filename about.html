@@ -3,44 +3,67 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Percentage Calculator Free — Discount, Tax & Markup | ToolsRhino</title>
-  <meta name="description" content="Free online percentage calculator. Calculate percentages, discounts, tax, markup and percentage change instantly. No signup required." />
-  <meta name="keywords" content="percentage calculator, percent calculator free, discount calculator, tax calculator online, percentage change calculator" />
-  <link rel="canonical" href="https://toolsrhino.com/tools/percentage-calculator.html" />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <title>About ToolsRhino — Free Online Tools for Freelancers & Professionals</title>
+  <meta name="description" content="Learn about ToolsRhino — a free collection of online tools built for freelancers, students and professionals. No signup, no cost, no nonsense." />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     :root { --bg:#0a0a0a; --surface:#111111; --border:#222222; --accent:#ff6b00; --accent2:#ff9a00; --text:#f0f0f0; --muted:#888888; }
     * { margin:0; padding:0; box-sizing:border-box; }
-    body { background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif; font-weight:300; }
-    nav { display:flex; align-items:center; justify-content:space-between; padding:1.2rem 4rem; background:rgba(10,10,10,0.95); border-bottom:1px solid var(--border); }
-    .logo { display:flex; align-items:center; gap:0.6rem; text-decoration:none; }
-    .logo-icon { width:32px; height:32px; background:var(--accent); border-radius:7px; display:flex; align-items:center; justify-content:center; font-size:1rem; }
-    .logo-text { font-family:'Syne',sans-serif; font-weight:800; font-size:1.1rem; color:var(--text); }
+    body { background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif; font-weight:300; overflow-x:hidden; }
+    img, video, svg { max-width:100%; height:auto; }
+    a, p, li { overflow-wrap:anywhere; }
+
+    nav {
+      display:flex; align-items:center; justify-content:space-between;
+      padding:0.75rem 1rem;
+      background:rgba(10,10,10,0.95);
+      border-bottom:1px solid var(--border);
+      position:sticky; top:0; z-index:100;
+      margin: 4px 4% 4px 4%;
+    }
+    .logo { display:flex; align-items:center; gap:0.5rem; text-decoration:none; }
+    .logo-icon { width:28px; height:28px; background:var(--accent); border-radius:6px; display:flex; align-items:center; justify-content:center; font-size:0.9rem; }
+    .logo-text { font-family:'Syne',sans-serif; font-weight:800; font-size:1rem; color:var(--text); }
     .logo-text span { color:var(--accent); }
-    .back-link { color:var(--muted); text-decoration:none; font-size:0.9rem; }
-    .page { max-width:760px; margin:0 auto; padding:4rem 2rem 6rem; }
-    .hero-about { text-align:center; margin-bottom:4rem; }
-    .big-icon { font-size:4rem; margin-bottom:1.5rem; }
-    h1 { font-family:'Syne',sans-serif; font-size:2.5rem; font-weight:800; letter-spacing:-1px; margin-bottom:1rem; }
-    .hero-about p { color:var(--muted); font-size:1.1rem; line-height:1.8; max-width:560px; margin:0 auto; }
-    .values-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin:3rem 0; }
-    .value-card { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.5rem; }
-    .value-icon { font-size:1.5rem; margin-bottom:0.8rem; }
-    .value-card h3 { font-family:'Syne',sans-serif; font-weight:700; margin-bottom:0.5rem; }
-    .value-card p { color:var(--muted); font-size:0.88rem; line-height:1.6; }
-    h2 { font-family:'Syne',sans-serif; font-size:1.6rem; font-weight:800; letter-spacing:-0.5px; margin:3rem 0 1rem; }
-    .prose { color:var(--muted); line-height:1.8; font-size:0.95rem; margin-bottom:1rem; }
-    .cta-box { background:rgba(255,107,0,0.07); border:1px solid rgba(255,107,0,0.2); border-radius:14px; padding:2.5rem; text-align:center; margin-top:3rem; }
-    .cta-box h3 { font-family:'Syne',sans-serif; font-size:1.5rem; font-weight:800; margin-bottom:0.8rem; }
-    .cta-box p { color:var(--muted); margin-bottom:1.5rem; }
-    .btn-primary { background:var(--accent); color:white; padding:0.85rem 2rem; border-radius:8px; text-decoration:none; font-weight:500; font-size:0.95rem; display:inline-block; transition:all 0.2s; }
+    .back-link { color:var(--muted); text-decoration:none; font-size:0.85rem; }
+
+    .page { max-width:760px; margin:0 auto; padding:4rem 1.5rem 6rem; }
+
+    .hero-about { text-align:center; margin-bottom:3rem; }
+    .big-icon { font-size:3rem; margin-bottom:1rem; }
+    h1 { font-family:'Syne',sans-serif; font-size:clamp(1.5rem, 5vw, 2.2rem); font-weight:800; letter-spacing:-0.5px; margin-bottom:0.8rem; }
+    .hero-about p { color:var(--muted); font-size:0.95rem; line-height:1.7; max-width:100%; margin:0 auto; }
+
+    .values-grid { display:grid; grid-template-columns:1fr; gap:0.75rem; margin:2rem 0; }
+    @media(min-width:600px) { .values-grid { grid-template-columns:1fr 1fr; } }
+
+    .value-card { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:1.25rem; }
+    .value-icon { font-size:1.3rem; margin-bottom:0.5rem; }
+    .value-card h3 { font-family:'Syne',sans-serif; font-weight:700; margin-bottom:0.4rem; font-size:0.95rem; }
+    .value-card p { color:var(--muted); font-size:0.85rem; line-height:1.6; }
+
+    h2 { font-family:'Syne',sans-serif; font-size:clamp(1.2rem, 4vw, 1.5rem); font-weight:800; letter-spacing:-0.3px; margin:2.5rem 0 0.8rem; }
+    .prose { color:var(--muted); line-height:1.7; font-size:0.9rem; margin-bottom:0.8rem; }
+
+    .cta-box { background:rgba(255,107,0,0.07); border:1px solid rgba(255,107,0,0.2); border-radius:12px; padding:2rem; text-align:center; margin-top:2rem; }
+    .cta-box h3 { font-family:'Syne',sans-serif; font-size:1.3rem; font-weight:800; margin-bottom:0.5rem; }
+    .cta-box p { color:var(--muted); font-size:0.85rem; margin-bottom:1rem; }
+    .btn-primary { background:var(--accent); color:white; padding:0.75rem 1.5rem; border-radius:8px; text-decoration:none; font-weight:500; font-size:0.9rem; display:inline-block; transition:all 0.2s; }
     .btn-primary:hover { background:var(--accent2); }
-    footer { padding:2rem 4rem; border-top:1px solid var(--border); margin-top:4rem; }
-    .footer-inner { max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }
-    .footer-links { display:flex; gap:2rem; }
-    .footer-links a { color:var(--muted); text-decoration:none; font-size:0.85rem; }
-    .footer-copy { color:var(--muted); font-size:0.82rem; }
-    @media(max-width:600px){ nav{padding:1rem 1.5rem;} .page{padding:2rem 1.2rem 4rem;} .values-grid{grid-template-columns:1fr;} h1{font-size:2rem;} footer{padding:2rem 1.5rem;} }
+
+    footer { padding:2rem 1.5rem; border-top:1px solid var(--border); margin-top:3rem; }
+    .footer-inner { max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; }
+    .footer-links { display:flex; gap:1.5rem; flex-wrap:wrap; }
+    .footer-links a { color:var(--muted); text-decoration:none; font-size:0.8rem; }
+    .footer-copy { color:var(--muted); font-size:0.78rem; }
+
+    @media (max-width: 520px) {
+      .page { padding:3rem 1rem 4.5rem; }
+      .cta-box { padding:1.25rem; }
+      footer { padding:1.5rem 1rem; }
+      .footer-inner { flex-direction:column; text-align:center; }
+      .footer-links { justify-content:center; gap:1rem; }
+    }
   </style>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-W5NGT3NMR8"></script>
   <script>
@@ -52,174 +75,61 @@
 </head>
 <body>
   <nav>
-    <a href="../index.html" class="logo"><div class="logo-icon">🦏</div><span class="logo-text">Tools<span>Rhino</span></span></a>
-    <a href="../index.html" class="back-link">← All Tools</a>
+    <a href="index.html" class="logo"><div class="logo-icon">🦏</div><span class="logo-text">Tools<span>Rhino</span></span></a>
+    <a href="index.html" class="back-link">← Home</a>
   </nav>
 
   <div class="page">
-    <div class="page-header">
-      <div class="tool-badge">📊 Calculator</div>
-      <h1>Percentage Calculator</h1>
-      <p>Calculate any percentage instantly — discounts, tax, tips, percentage change and more. All free, no signup needed.</p>
+    <div class="hero-about">
+      <div class="big-icon">🦏</div>
+      <h1>Built for People Who Get Things Done</h1>
+      <p>ToolsRhino is a free collection of online tools for freelancers, students and professionals. No fluff, no paywalls, no signup — just powerful tools that work instantly.</p>
     </div>
 
-    <!-- CALC 1 -->
-    <div class="calc-card">
-      <h3>📌 What is X% of Y?</h3>
-      <div class="input-row">
-        <div class="input-group">
-          <label>Percentage (%)</label>
-          <input type="number" id="c1p" placeholder="e.g. 20" oninput="calc1()" />
-        </div>
-        <div class="equals">of</div>
-        <div class="input-group">
-          <label>Number</label>
-          <input type="number" id="c1n" placeholder="e.g. 500" oninput="calc1()" />
-        </div>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon">⚡</div>
+        <h3>Instant Results</h3>
+        <p>Every tool gives you results the moment you start typing. No buttons to click, no waiting, no loading screens.</p>
       </div>
-      <div class="result-box">
-        <span class="result-label">Result</span>
-        <span class="result-value" id="r1">—</span>
+      <div class="value-card">
+        <div class="value-icon">🔒</div>
+        <h3>Your Data Stays Private</h3>
+        <p>All tools run in your browser. Your text and data are never sent to our servers or shared with anyone.</p>
       </div>
-    </div>
-
-    <!-- CALC 2 -->
-    <div class="calc-card">
-      <h3>📌 X is what % of Y?</h3>
-      <div class="input-row">
-        <div class="input-group">
-          <label>Number (X)</label>
-          <input type="number" id="c2x" placeholder="e.g. 50" oninput="calc2()" />
-        </div>
-        <div class="equals">of</div>
-        <div class="input-group">
-          <label>Total (Y)</label>
-          <input type="number" id="c2y" placeholder="e.g. 200" oninput="calc2()" />
-        </div>
+      <div class="value-card">
+        <div class="value-icon">💸</div>
+        <h3>100% Free Forever</h3>
+        <p>Every tool is completely free. We earn through non-intrusive advertising so you never have to pay a cent.</p>
       </div>
-      <div class="result-box">
-        <span class="result-label">Percentage</span>
-        <span class="result-value" id="r2">—</span>
+      <div class="value-card">
+        <div class="value-icon">📱</div>
+        <h3>Works Everywhere</h3>
+        <p>Designed to work perfectly on mobile, tablet and desktop. Use your tools anywhere, anytime.</p>
       </div>
     </div>
 
-    <!-- CALC 3 -->
-    <div class="calc-card">
-      <h3>📌 Percentage Change (Increase / Decrease)</h3>
-      <div class="input-row">
-        <div class="input-group">
-          <label>From Value</label>
-          <input type="number" id="c3a" placeholder="e.g. 100" oninput="calc3()" />
-        </div>
-        <div class="equals">→</div>
-        <div class="input-group">
-          <label>To Value</label>
-          <input type="number" id="c3b" placeholder="e.g. 150" oninput="calc3()" />
-        </div>
-      </div>
-      <div class="result-box">
-        <span class="result-label">Change</span>
-        <span class="result-value" id="r3">—</span>
-      </div>
+    <h2>Our Story</h2>
+    <p class="prose">ToolsRhino was built out of frustration. We were tired of searching for a simple tool online, only to land on websites that demanded signups, showed pop-ups, or put basic features behind a paywall.</p>
+    <p class="prose">So we built ToolsRhino — a place where every tool is free, fast, and works without any fuss. Like a rhino, our tools are strong, reliable, and get the job done without any drama.</p>
+    <p class="prose">We add new tools every week based on what our users need. If you need a tool we don't have yet, we would love to hear from you.</p>
+
+    <h2>Our Mission</h2>
+    <p class="prose">To build the most useful collection of free online tools for freelancers, students and professionals worldwide — and to keep them free forever.</p>
+
+    <div class="cta-box">
+      <h3>Ready to Get Started?</h3>
+      <p>Explore our full collection of free tools — no signup, no cost.</p>
+      <a href="index.html#tools" class="btn-primary">Browse All Tools →</a>
     </div>
+  </div>
 
-    <!-- CALC 4 -->
-    <div class="calc-card">
-      <h3>📌 Discount Calculator</h3>
-      <div class="input-row">
-        <div class="input-group">
-          <label>Original Price</label>
-          <input type="number" id="c4p" placeholder="e.g. 1200" oninput="calc4()" />
-        </div>
-        <div class="equals">—</div>
-        <div class="input-group">
-          <label>Discount (%)</label>
-          <input type="number" id="c4d" placeholder="e.g. 25" oninput="calc4()" />
-        </div>
-      </div>
-      <div class="result-box">
-        <span class="result-label">Price After Discount</span>
-        <span class="result-value" id="r4">—</span>
-      </div>
-    </div>
-
-    </div>
-
-    <div class="seo-content">
-      <h2>Free Percentage Calculator — Calculate Any Percentage Instantly</h2>
-      <p>Our free percentage calculator handles four of the most common percentage calculations in one place — finding a percentage of a number, calculating what percentage one number is of another, calculating percentage change between two values, and calculating discounted prices. All results update instantly as you type.</p>
-      <p>Whether you need to calculate a discount while shopping, figure out tax on an invoice, calculate your freelance income growth month over month, or work out a tip at a restaurant — this free percentage calculator has you covered.</p>
-
-      <h2>Frequently Asked Questions</h2>
-
-      <div class="faq-item">
-        <h3>How do I calculate 20% of a number?</h3>
-        <p>Use the first calculator on this page. Enter 20 in the percentage field and your number in the second field. The result appears instantly. For example 20% of 500 = 100.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>How do I calculate percentage increase?</h3>
-        <p>Use the "Percentage Change" calculator. Enter your starting value in the "From" field and your new value in the "To" field. A positive result means increase, a negative result means decrease.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>How do I calculate a discount?</h3>
-        <p>Use the "Discount Calculator" at the bottom of the page. Enter the original price and the discount percentage. The calculator shows you the final price after the discount is applied.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>How do I calculate sales tax?</h3>
-        <p>Use the first calculator. Enter your tax rate percentage and your pre-tax amount. The result is the tax amount. Add this to your original amount to get the total with tax.</p>
-      </div>
-
-      <div class="related-tools">
-        <h2>Related Free Tools</h2>
-        <div class="related-grid">
-          <a href="loan-calculator.html" class="related-card">🏦 Loan Calculator</a>
-          <a href="tip-calculator.html" class="related-card">🍽️ Tip Calculator</a>
-          <a href="currency-converter.html" class="related-card">💱 Currency Converter</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <footer>
     <div class="footer-inner">
-      <a href="../index.html" class="logo"><div class="logo-icon">🦏</div><span class="logo-text">Tools<span>Rhino</span></span></a>
-      <div class="footer-links"><a href="../about.html">About</a><a href="../privacy.html">Privacy Policy</a><a href="../contact.html">Contact</a></div>
+      <a href="index.html" class="logo"><div class="logo-icon">🦏</div><span class="logo-text">Tools<span>Rhino</span></span></a>
+      <div class="footer-links"><a href="about.html">About</a><a href="privacy.html">Privacy Policy</a><a href="contact.html">Contact</a></div>
       <div class="footer-copy">© 2025 ToolsRhino</div>
     </div>
   </footer>
-
-  <script>
-    function calc1() {
-      const p = parseFloat(document.getElementById('c1p').value);
-      const n = parseFloat(document.getElementById('c1n').value);
-      document.getElementById('r1').textContent = (!isNaN(p) && !isNaN(n)) ? ((p/100)*n).toFixed(2) : '—';
-    }
-    function calc2() {
-      const x = parseFloat(document.getElementById('c2x').value);
-      const y = parseFloat(document.getElementById('c2y').value);
-      document.getElementById('r2').textContent = (!isNaN(x) && !isNaN(y) && y !== 0) ? ((x/y)*100).toFixed(2)+'%' : '—';
-    }
-    function calc3() {
-      const a = parseFloat(document.getElementById('c3a').value);
-      const b = parseFloat(document.getElementById('c3b').value);
-      if (!isNaN(a) && !isNaN(b) && a !== 0) {
-        const change = ((b-a)/Math.abs(a)*100).toFixed(2);
-        document.getElementById('r3').textContent = (change > 0 ? '+' : '') + change + '%';
-      } else { document.getElementById('r3').textContent = '—'; }
-    }
-    function calc4() {
-      const p = parseFloat(document.getElementById('c4p').value);
-      const d = parseFloat(document.getElementById('c4d').value);
-      document.getElementById('r4').textContent = (!isNaN(p) && !isNaN(d)) ? (p - (p*d/100)).toFixed(2) : '—';
-    }
-  
-    function toggleFAQ(el) {
-      const a = el.nextElementSibling;
-      const icon = el.querySelector('.faq-icon');
-      a.classList.toggle('open');
-      icon.classList.toggle('open');
-    }
-</script>
 </body>
 </html>
