@@ -9,29 +9,45 @@
   <style>
     :root { --bg:#0a0a0a; --surface:#111111; --border:#222222; --accent:#ff6b00; --accent2:#ff9a00; --text:#f0f0f0; --muted:#888888; }
     * { margin:0; padding:0; box-sizing:border-box; }
-    body { background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif; font-weight:300; }
-    nav { display:flex; align-items:center; justify-content:space-between; padding:1.2rem 4rem; background:rgba(10,10,10,0.95); border-bottom:1px solid var(--border); }
-    .logo { display:flex; align-items:center; gap:0.6rem; text-decoration:none; }
-    .logo-icon { width:32px; height:32px; background:var(--accent); border-radius:7px; display:flex; align-items:center; justify-content:center; font-size:1rem; }
-    .logo-text { font-family:'Syne',sans-serif; font-weight:800; font-size:1.1rem; color:var(--text); }
+    body { background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif; font-weight:300; overflow-x:hidden; }
+    img, video, svg { max-width:100%; height:auto; }
+    a, p, li { overflow-wrap:anywhere; }
+
+    nav {
+      display:flex; align-items:center; justify-content:space-between;
+      padding:0.75rem 1rem;
+      background:rgba(10,10,10,0.95);
+      border-bottom:1px solid var(--border);
+      position:sticky; top:0; z-index:100;
+    }
+    .logo { display:flex; align-items:center; gap:0.5rem; text-decoration:none; }
+    .logo-icon { width:28px; height:28px; background:var(--accent); border-radius:6px; display:flex; align-items:center; justify-content:center; font-size:0.9rem; }
+    .logo-text { font-family:'Syne',sans-serif; font-weight:800; font-size:1rem; color:var(--text); }
     .logo-text span { color:var(--accent); }
-    .back-link { color:var(--muted); text-decoration:none; font-size:0.9rem; }
-    .page { max-width:760px; margin:0 auto; padding:4rem 2rem 6rem; }
-    h1 { font-family:'Syne',sans-serif; font-size:2.2rem; font-weight:800; letter-spacing:-1px; margin-bottom:0.5rem; }
-    .updated { color:var(--muted); font-size:0.85rem; margin-bottom:3rem; }
-    h2 { font-family:'Syne',sans-serif; font-size:1.2rem; font-weight:700; margin:2.5rem 0 0.8rem; color:var(--accent2); }
-    p { color:var(--muted); line-height:1.8; margin-bottom:1rem; font-size:0.95rem; }
-    ul { color:var(--muted); line-height:1.8; font-size:0.95rem; padding-left:1.5rem; margin-bottom:1rem; }
-    li { margin-bottom:0.4rem; }
+    .back-link { color:var(--muted); text-decoration:none; font-size:0.85rem; }
+
+    .page { max-width:760px; margin:0 auto; padding:3rem 1.5rem 5rem; }
+    h1 { font-family:'Syne',sans-serif; font-size:clamp(1.3rem, 5vw, 1.8rem); font-weight:800; letter-spacing:-0.5px; margin-bottom:0.3rem; }
+    .updated { color:var(--muted); font-size:0.8rem; margin-bottom:2rem; }
+    h2 { font-family:'Syne',sans-serif; font-size:clamp(1rem, 4vw, 1.2rem); font-weight:700; margin:2rem 0 0.5rem; color:var(--accent2); }
+    p { color:var(--muted); line-height:1.7; margin-bottom:0.8rem; font-size:0.88rem; }
+    ul { color:var(--muted); line-height:1.7; font-size:0.88rem; padding-left:1.2rem; margin-bottom:0.8rem; }
+    li { margin-bottom:0.3rem; }
     a { color:var(--accent); }
-    footer { padding:2rem 4rem; border-top:1px solid var(--border); margin-top:4rem; }
-    .footer-inner { max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }
-    .footer-links { display:flex; gap:2rem; }
-    .footer-links a { color:var(--muted); text-decoration:none; font-size:0.85rem; }
-    .footer-copy { color:var(--muted); font-size:0.82rem; }
-    @media(max-width:600px){ nav{padding:1rem 1.5rem;} .page{padding:2rem 1.2rem 4rem;} footer{padding:2rem 1.5rem;} }
+
+    footer { padding:1.5rem; border-top:1px solid var(--border); margin-top:3rem; }
+    .footer-inner { max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; }
+    .footer-links { display:flex; gap:1.5rem; flex-wrap:wrap; }
+    .footer-links a { color:var(--muted); text-decoration:none; font-size:0.78rem; }
+    .footer-copy { color:var(--muted); font-size:0.75rem; }
+
+    @media (max-width: 520px) {
+      .page { padding:2.5rem 1rem 4rem; }
+      footer { padding:1.5rem 1rem; }
+      .footer-inner { flex-direction:column; text-align:center; }
+      .footer-links { justify-content:center; gap:1rem; }
+    }
   </style>
-  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-W5NGT3NMR8"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -76,19 +92,18 @@
 
     <h2>4. Google AdSense & Cookies</h2>
     <p>We use Google AdSense to display advertisements on our website. Google AdSense may use cookies to serve ads based on your prior visits to our website or other websites. You can opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank">Google's Ads Settings</a>.</p>
-    <p>Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to our website. These cookies do not contain personally identifiable information.</p>
 
     <h2>5. Google Analytics</h2>
-    <p>We use Google Analytics to understand website traffic patterns. Google Analytics collects anonymized data about how visitors use our site. This data is used solely to improve our website. You can opt out using the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank">Google Analytics Opt-out Browser Add-on</a>.</p>
+    <p>We use Google Analytics to understand website traffic patterns. Google Analytics collects anonymized data about how visitors use our site. You can opt out using the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank">Google Analytics Opt-out Browser Add-on</a>.</p>
 
     <h2>6. Third Party Links</h2>
-    <p>Our website may contain links to third-party websites. We have no control over the content and privacy practices of those websites and are not responsible for their privacy policies.</p>
+    <p>Our website may contain links to third-party websites. We have no control over the content and privacy practices of those websites.</p>
 
     <h2>7. Children's Privacy</h2>
-    <p>ToolsRhino does not knowingly collect personal information from children under the age of 13. If you believe your child has provided personal information on our website, please contact us immediately.</p>
+    <p>ToolsRhino does not knowingly collect personal information from children under the age of 13.</p>
 
     <h2>8. Changes to This Policy</h2>
-    <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page with an updated date. We encourage you to review this page periodically.</p>
+    <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
 
     <h2>9. Contact Us</h2>
     <p>If you have any questions about this Privacy Policy, please contact us at: <a href="contact.html">Contact Page</a></p>
