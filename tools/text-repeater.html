@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Text Repeater — Repeat Text Online Free | ToolsRhino</title>
+  <meta name="description" content="Free online text repeater. Repeat any text, word or sentence any number of times instantly. Add separator between repetitions. No signup required." />
+  <meta name="keywords" content="text repeater, repeat text online, text repeater free, word repeater, sentence repeater online" />
+  <link rel="canonical" href="https://toolsrhino.com/tools/text-repeater.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W5NGT3NMR8"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-W5NGT3NMR8');</script>
+  <style>
+    :root{--bg:#0a0a0a;--surface:#111111;--border:#222222;--accent:#ff6b00;--accent2:#ff9a00;--text:#f0f0f0;--muted:#888888;}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;background:rgba(10,10,10,0.95);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;}
+    .logo{display:flex;align-items:center;gap:0.5rem;text-decoration:none;}
+    .logo-icon{width:30px;height:30px;background:var(--accent);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:0.9rem;}
+    .logo-text{font-family:'Syne',sans-serif;font-weight:800;font-size:1.05rem;color:var(--text);}
+    .logo-text span{color:var(--accent);}
+    .back-link{color:var(--muted);text-decoration:none;font-size:0.85rem;}
+    .page{max-width:800px;margin:0 auto;padding:2.5rem 1.2rem 5rem;}
+    .tool-badge{display:inline-block;background:rgba(255,107,0,0.1);border:1px solid rgba(255,107,0,0.2);color:var(--accent2);padding:0.3rem 0.8rem;border-radius:6px;font-size:0.75rem;font-weight:500;margin-bottom:0.8rem;}
+    h1{font-family:'Syne',sans-serif;font-size:clamp(1.6rem,5vw,2.2rem);font-weight:800;letter-spacing:-1px;margin-bottom:0.5rem;}
+    .subtitle{color:var(--muted);font-size:0.95rem;line-height:1.6;margin-bottom:1.5rem;}
+    .card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.5rem;margin-bottom:1rem;}
+    .options-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;margin-bottom:1.2rem;}
+    .input-group label{display:block;font-size:0.78rem;color:var(--muted);margin-bottom:0.4rem;}
+    .input-group input,.input-group select{width:100%;padding:0.75rem 0.9rem;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.95rem;outline:none;transition:border-color 0.2s;}
+    .input-group input:focus,.input-group select:focus{border-color:rgba(255,107,0,0.4);}
+    textarea{width:100%;padding:1rem;background:var(--bg);border:1px solid var(--border);border-radius:10px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.95rem;line-height:1.6;resize:vertical;outline:none;transition:border-color 0.2s;}
+    textarea:focus{border-color:rgba(255,107,0,0.4);}
+    textarea::placeholder{color:var(--muted);}
+    .btn-row{display:flex;gap:0.8rem;margin-top:1rem;flex-wrap:wrap;}
+    .btn{padding:0.75rem 1.5rem;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:500;cursor:pointer;border:none;transition:all 0.2s;}
+    .btn-accent{background:var(--accent);color:white;}
+    .btn-accent:hover{background:var(--accent2);}
+    .btn-outline{background:transparent;border:1px solid var(--border);color:var(--muted);}
+    .btn-outline:hover{border-color:var(--accent);color:var(--accent);}
+    .result-info{font-size:0.8rem;color:var(--muted);margin-top:0.5rem;}
+    .seo-section{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border);}
+    .seo-section h2{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;margin-bottom:0.8rem;}
+    .seo-section p{color:var(--muted);line-height:1.8;margin-bottom:1rem;font-size:0.92rem;}
+    .faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:0.8rem;overflow:hidden;}
+    .faq-q{padding:1rem 1.2rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:500;font-size:0.9rem;background:var(--surface);}
+    .faq-a{padding:0 1.2rem;max-height:0;overflow:hidden;transition:all 0.3s;color:var(--muted);font-size:0.87rem;line-height:1.7;}
+    .faq-a.open{padding:1rem 1.2rem;max-height:200px;}
+    .faq-icon{color:var(--accent);transition:transform 0.3s;}
+    .faq-icon.open{transform:rotate(45deg);}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.8rem;margin-top:1rem;}
+    .related-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem;text-decoration:none;color:var(--text);transition:all 0.2s;}
+    .related-card:hover{border-color:rgba(255,107,0,0.3);transform:translateY(-2px);}
+    .related-card .icon{font-size:1.2rem;margin-bottom:0.3rem;}
+    .related-card .name{font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700;}
+    .related-card .desc{font-size:0.72rem;color:var(--muted);margin-top:0.2rem;}
+    footer{padding:2rem 1.2rem;border-top:1px solid var(--border);margin-top:3rem;}
+    .footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+    .footer-links{display:flex;gap:1.5rem;}
+    .footer-links a{color:var(--muted);text-decoration:none;font-size:0.82rem;}
+    .footer-copy{color:var(--muted);font-size:0.8rem;}
+    @media(max-width:600px){.options-row{grid-template-columns:1fr 1fr;}.related-grid{grid-template-columns:1fr 1fr;}.footer-inner{flex-direction:column;text-align:center;}.footer-links{flex-wrap:wrap;justify-content:center;}}
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="../index.html" class="logo"><div class="logo-icon">🦏</div><span class="logo-text">Tools<span>Rhino</span></span></a>
+    <a href="../index.html" class="back-link">← All Tools</a>
+  </nav>
+  <div class="page">
+    <div class="tool-badge">🔁 Text Tool</div>
+    <h1>Text Repeater</h1>
+    <p class="subtitle">Repeat any text, word or sentence any number of times instantly. Add custom separators between repetitions. Free, no signup required.</p>
+    <div class="card">
+      <div class="input-group" style="margin-bottom:1rem;">
+        <label>Text to Repeat</label>
+        <textarea id="inputText" rows="3" placeholder="Type or paste your text here..."></textarea>
+      </div>
+      <div class="options-row">
+        <div class="input-group">
+          <label>Repeat Times</label>
+          <input type="number" id="repeatCount" value="5" min="1" max="1000" />
+        </div>
+        <div class="input-group">
+          <label>Separator</label>
+          <select id="separator">
+            <option value="\n">New Line</option>
+            <option value=" ">Space</option>
+            <option value=", ">Comma</option>
+            <option value=" | ">Pipe ( | )</option>
+            <option value="">No Separator</option>
+            <option value="custom">Custom...</option>
+          </select>
+        </div>
+        <div class="input-group" id="customSepGroup" style="display:none;">
+          <label>Custom Separator</label>
+          <input type="text" id="customSep" placeholder="e.g. ---" />
+        </div>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-accent" onclick="repeatText()">🔁 Repeat Text</button>
+        <button class="btn btn-outline" onclick="copyResult()">📋 Copy Result</button>
+        <button class="btn btn-outline" onclick="clearAll()">✕ Clear</button>
+      </div>
+    </div>
+    <div class="card">
+      <label style="font-size:0.78rem;color:var(--muted);display:block;margin-bottom:0.5rem;">Result</label>
+      <textarea id="outputText" rows="8" placeholder="Your repeated text will appear here..." readonly></textarea>
+      <div class="result-info" id="resultInfo"></div>
+    </div>
+    <div class="seo-section">
+      <h2>Free Online Text Repeater</h2>
+      <p>ToolsRhino's text repeater lets you repeat any text, word, phrase or sentence as many times as you need instantly. Choose from multiple separator options including new lines, commas, spaces or a custom separator of your choice.</p>
+      <p>This tool is perfect for developers testing input fields, content creators generating placeholder text, students practicing writing, designers creating lorem ipsum alternatives and anyone who needs to quickly repeat text without manual copy pasting.</p>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFAQ(this)">What can I use the text repeater for?<span class="faq-icon">+</span></div><div class="faq-a">Common uses include testing input fields and forms, creating repeated patterns, generating placeholder content, practicing typing, creating design mockups with repeated text and bulk content creation.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFAQ(this)">How many times can I repeat text?<span class="faq-icon">+</span></div><div class="faq-a">You can repeat text up to 1000 times. For very large repetitions the result may be long so use the copy button to grab it all at once.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFAQ(this)">Is my text stored anywhere?<span class="faq-icon">+</span></div><div class="faq-a">No. All processing happens entirely in your browser. Your text is never sent to any server and is never stored or shared.</div></div>
+      <h2 style="margin-top:2rem;">Related Tools</h2>
+      <div class="related-grid">
+        <a href="word-counter.html" class="related-card"><div class="icon">📝</div><div class="name">Word Counter</div><div class="desc">Count words instantly</div></a>
+        <a href="case-converter.html" class="related-card"><div class="icon">🔤</div><div class="name">Case Converter</div><div class="desc">Change text case</div></a>
+        <a href="password-generator.html" class="related-card"><div class="icon">🔐</div><div class="name">Password Generator</div><div class="desc">Generate secure passwords</div></a>
+      </div>
+    </div>
+  </div>
+  <footer><div class="footer-inner"><a href="../index.html" class="logo"><div class="logo-icon">🦏</div><span class="logo-text">Tools<span>Rhino</span></span></a><div class="footer-links"><a href="../about.html">About</a><a href="../privacy.html">Privacy</a><a href="../contact.html">Contact</a></div><div class="footer-copy">© 2025 ToolsRhino</div></div></footer>
+  <script>
+    document.getElementById('separator').addEventListener('change', function(){
+      document.getElementById('customSepGroup').style.display = this.value === 'custom' ? 'block' : 'none';
+    });
+    function getSep(){
+      const sel = document.getElementById('separator').value;
+      if(sel === 'custom') return document.getElementById('customSep').value;
+      return sel.replace('\\n', '\n');
+    }
+    function repeatText(){
+      const text = document.getElementById('inputText').value;
+      const count = parseInt(document.getElementById('repeatCount').value) || 1;
+      if(!text.trim()){alert('Please enter some text to repeat.');return;}
+      const sep = getSep();
+      const result = Array(count).fill(text).join(sep);
+      document.getElementById('outputText').value = result;
+      const words = result.trim().split(/\s+/).length;
+      const chars = result.length;
+      document.getElementById('resultInfo').textContent = `${count} repetitions • ${chars.toLocaleString()} characters • ${words.toLocaleString()} words`;
+    }
+    function copyResult(){
+      const text = document.getElementById('outputText').value;
+      if(!text){return;}
+      navigator.clipboard.writeText(text).then(()=>{
+        const btn = event.target;
+        btn.textContent = '✅ Copied!';
+        setTimeout(()=>btn.textContent='📋 Copy Result',2000);
+      });
+    }
+    function clearAll(){
+      document.getElementById('inputText').value='';
+      document.getElementById('outputText').value='';
+      document.getElementById('resultInfo').textContent='';
+    }
+    function toggleFAQ(el){const a=el.nextElementSibling;const icon=el.querySelector('.faq-icon');a.classList.toggle('open');icon.classList.toggle('open');}
+  </script>
+</body>
+</html>

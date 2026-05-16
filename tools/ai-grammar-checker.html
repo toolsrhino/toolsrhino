@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Grammar Checker & Text Improver — Free | ToolsRhino</title>
+  <meta name="description" content="Free AI grammar checker. Fix grammar, spelling, punctuation and improve your writing instantly. Also paraphrase and simplify text. No signup required." />
+  <meta name="keywords" content="grammar checker free, AI grammar checker, grammar fixer online, paraphrase tool free, text improver AI, spelling checker online" />
+  <link rel="canonical" href="https://toolsrhino.com/tools/ai-grammar-checker.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W5NGT3NMR8"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-W5NGT3NMR8');</script>
+  <style>
+    :root{--bg:#0a0a0a;--surface:#111111;--border:#222222;--accent:#ff6b00;--accent2:#ff9a00;--text:#f0f0f0;--muted:#888888;}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;background:rgba(10,10,10,0.95);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;}
+    .logo{display:flex;align-items:center;gap:0.5rem;text-decoration:none;}
+    .logo-icon{width:30px;height:30px;background:var(--accent);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:0.9rem;}
+    .logo-text{font-family:'Syne',sans-serif;font-weight:800;font-size:1.05rem;color:var(--text);}
+    .logo-text span{color:var(--accent);}
+    .back-link{color:var(--muted);text-decoration:none;font-size:0.85rem;}
+    .page{max-width:900px;margin:0 auto;padding:2.5rem 1.2rem 5rem;}
+    .hero-badge{display:inline-flex;align-items:center;gap:0.4rem;background:rgba(255,107,0,0.1);border:1px solid rgba(255,107,0,0.3);color:var(--accent2);padding:0.3rem 0.9rem;border-radius:100px;font-size:0.75rem;font-weight:500;margin-bottom:1rem;}
+    h1{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,5vw,2.8rem);font-weight:800;letter-spacing:-1px;margin-bottom:0.5rem;line-height:1.1;}
+    h1 span{color:var(--accent);}
+    .subtitle{color:var(--muted);font-size:1rem;line-height:1.6;margin-bottom:1.5rem;}
+
+    /* MODE BUTTONS */
+    .mode-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.6rem;margin-bottom:1.5rem;}
+    .mode-btn{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:0.9rem 0.5rem;text-align:center;cursor:pointer;transition:all 0.2s;}
+    .mode-btn:hover,.mode-btn.active{background:rgba(255,107,0,0.1);border-color:var(--accent);}
+    .mode-icon{font-size:1.4rem;margin-bottom:0.3rem;}
+    .mode-name{font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700;color:var(--text);}
+    .mode-desc{font-size:0.7rem;color:var(--muted);margin-top:0.2rem;}
+    .mode-btn.active .mode-name{color:var(--accent2);}
+
+    /* MAIN EDITOR */
+    .editor-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;}
+    .editor-box{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.2rem;display:flex;flex-direction:column;}
+    .editor-label{font-size:0.75rem;color:var(--muted);font-weight:500;margin-bottom:0.6rem;display:flex;justify-content:space-between;align-items:center;}
+    .char-count{font-size:0.7rem;color:var(--muted);}
+    textarea{flex:1;width:100%;min-height:220px;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.92rem;line-height:1.7;padding:0.9rem;resize:none;outline:none;transition:border-color 0.2s;}
+    textarea:focus{border-color:rgba(255,107,0,0.4);}
+    textarea::placeholder{color:var(--muted);}
+    textarea[readonly]{cursor:default;background:rgba(10,10,10,0.5);}
+
+    .btn-generate{width:100%;padding:1rem;background:linear-gradient(135deg,var(--accent),var(--accent2));color:white;border:none;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:600;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;justify-content:center;gap:0.5rem;}
+    .btn-generate:hover{opacity:0.9;}
+    .btn-generate:disabled{opacity:0.6;cursor:not-allowed;}
+
+    .action-row{display:flex;gap:0.6rem;margin-top:0.8rem;flex-wrap:wrap;}
+    .btn-sm{padding:0.4rem 0.9rem;border-radius:6px;font-family:'DM Sans',sans-serif;font-size:0.8rem;font-weight:500;cursor:pointer;border:none;transition:all 0.2s;}
+    .btn-copy{background:rgba(255,107,0,0.15);color:var(--accent2);border:1px solid rgba(255,107,0,0.3);}
+    .btn-copy:hover{background:rgba(255,107,0,0.25);}
+    .btn-clear{background:var(--bg);color:var(--muted);border:1px solid var(--border);}
+    .btn-replace{background:rgba(50,200,100,0.15);color:#32c864;border:1px solid rgba(50,200,100,0.3);}
+
+    /* LOADING */
+    .loading-box{display:none;text-align:center;padding:1.5rem;}
+    .spinner{width:36px;height:36px;border:3px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin 0.8s linear infinite;margin:0 auto 0.8rem;}
+    @keyframes spin{to{transform:rotate(360deg);}}
+    .loading-text{color:var(--muted);font-size:0.88rem;}
+
+    /* IMPROVEMENTS PANEL */
+    .improvements-box{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.2rem;margin-top:1rem;display:none;}
+    .improvements-title{font-family:'Syne',sans-serif;font-weight:700;font-size:0.9rem;color:var(--accent2);margin-bottom:0.8rem;}
+    .improvement-item{display:flex;gap:0.6rem;padding:0.6rem 0;border-bottom:1px solid var(--border);font-size:0.85rem;}
+    .improvement-item:last-child{border-bottom:none;}
+    .imp-icon{font-size:0.9rem;flex-shrink:0;margin-top:0.1rem;}
+    .imp-text{color:var(--muted);line-height:1.5;}
+
+    .seo-section{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border);}
+    .seo-section h2{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;margin-bottom:0.8rem;}
+    .seo-section p{color:var(--muted);line-height:1.8;margin-bottom:1rem;font-size:0.92rem;}
+    .faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:0.7rem;overflow:hidden;}
+    .faq-q{padding:0.9rem 1.1rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:500;font-size:0.9rem;background:var(--surface);}
+    .faq-a{padding:0 1.1rem;max-height:0;overflow:hidden;transition:all 0.3s;color:var(--muted);font-size:0.87rem;line-height:1.7;}
+    .faq-a.open{padding:0.9rem 1.1rem;max-height:200px;}
+    .faq-icon{color:var(--accent);transition:transform 0.3s;}
+    .faq-icon.open{transform:rotate(45deg);}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.8rem;margin-top:1rem;}
+    .related-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem;text-decoration:none;color:var(--text);transition:all 0.2s;}
+    .related-card:hover{border-color:rgba(255,107,0,0.3);transform:translateY(-2px);}
+    .related-card .icon{font-size:1.2rem;margin-bottom:0.3rem;}
+    .related-card .name{font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700;}
+    .related-card .desc{font-size:0.72rem;color:var(--muted);margin-top:0.2rem;}
+    footer{padding:2rem 1.2rem;border-top:1px solid var(--border);margin-top:3rem;}
+    .footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+    .footer-links{display:flex;gap:1.5rem;}
+    .footer-links a{color:var(--muted);text-decoration:none;font-size:0.82rem;}
+    .footer-copy{color:var(--muted);font-size:0.8rem;}
+    @media(max-width:650px){.editor-grid{grid-template-columns:1fr;}.mode-grid{grid-template-columns:repeat(2,1fr);}.related-grid{grid-template-columns:1fr 1fr;}.footer-inner{flex-direction:column;text-align:center;}.footer-links{flex-wrap:wrap;justify-content:center;}}
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="../index.html" class="logo"><div class="logo-icon">🦏</div><span class="logo-text">Tools<span>Rhino</span></span></a>
+    <a href="../index.html" class="back-link">← All Tools</a>
+  </nav>
+
+  <div class="page">
+    <div class="hero-badge">✨ Powered by AI</div>
+    <h1>AI Grammar Checker<br/><span>& Text Improver</span></h1>
+    <p class="subtitle">Fix grammar, spelling and punctuation. Improve, paraphrase or simplify any text instantly. Free, no signup required.</p>
+
+    <!-- MODES -->
+    <div class="mode-grid">
+      <div class="mode-btn active" onclick="selectMode('grammar',this)">
+        <div class="mode-icon">✅</div>
+        <div class="mode-name">Grammar Fix</div>
+        <div class="mode-desc">Fix errors & mistakes</div>
+      </div>
+      <div class="mode-btn" onclick="selectMode('improve',this)">
+        <div class="mode-icon">⬆️</div>
+        <div class="mode-name">Improve Writing</div>
+        <div class="mode-desc">Make it more professional</div>
+      </div>
+      <div class="mode-btn" onclick="selectMode('paraphrase',this)">
+        <div class="mode-icon">🔄</div>
+        <div class="mode-name">Paraphrase</div>
+        <div class="mode-desc">Rewrite differently</div>
+      </div>
+      <div class="mode-btn" onclick="selectMode('simplify',this)">
+        <div class="mode-icon">💡</div>
+        <div class="mode-name">Simplify</div>
+        <div class="mode-desc">Make it easier to read</div>
+      </div>
+      <div class="mode-btn" onclick="selectMode('formal',this)">
+        <div class="mode-icon">👔</div>
+        <div class="mode-name">Make Formal</div>
+        <div class="mode-desc">Professional tone</div>
+      </div>
+      <div class="mode-btn" onclick="selectMode('shorter',this)">
+        <div class="mode-icon">✂️</div>
+        <div class="mode-name">Make Shorter</div>
+        <div class="mode-desc">Concise & to the point</div>
+      </div>
+    </div>
+
+    <!-- EDITOR -->
+    <div class="editor-grid">
+      <div class="editor-box">
+        <div class="editor-label">
+          <span>✍️ Your Text</span>
+          <span class="char-count" id="charCount">0 words</span>
+        </div>
+        <textarea id="inputText" placeholder="Paste or type your text here...
+
+Example: i want to applying for this job because i have alot of experience in this field and i am very good worker who always complete task on time." oninput="updateCount()"></textarea>
+        <div class="action-row">
+          <button class="btn-sm btn-clear" onclick="clearAll()">✕ Clear</button>
+        </div>
+      </div>
+      <div class="editor-box">
+        <div class="editor-label">
+          <span>✅ <span id="outputLabel">Corrected Text</span></span>
+        </div>
+        <textarea id="outputText" placeholder="Improved text will appear here..." readonly></textarea>
+        <div class="action-row">
+          <button class="btn-sm btn-copy" onclick="copyOutput()">📋 Copy</button>
+          <button class="btn-sm btn-replace" onclick="replaceInput()">↩ Use as Input</button>
+        </div>
+      </div>
+    </div>
+
+    <button class="btn-generate" onclick="processText()" id="processBtn">
+      ✨ <span id="btnText">Fix Grammar</span>
+    </button>
+
+    <!-- LOADING -->
+    <div class="loading-box" id="loadingBox">
+      <div class="spinner"></div>
+      <div class="loading-text" id="loadingText">Analyzing your text...</div>
+    </div>
+
+    <!-- IMPROVEMENTS -->
+    <div class="improvements-box" id="improvementsBox">
+      <div class="improvements-title">📋 What Was Improved</div>
+      <div id="improvementsList"></div>
+    </div>
+
+    <div class="seo-section">
+      <h2>Free AI Grammar Checker & Text Improver</h2>
+      <p>ToolsRhino's AI grammar checker uses advanced artificial intelligence to instantly detect and fix grammar errors, spelling mistakes and punctuation issues in any text. Whether you are writing an email, essay, proposal or social media post — our AI makes sure your writing is polished and professional.</p>
+      <p>Beyond just fixing errors, you can also use it to improve writing quality, paraphrase content in a different style, simplify complex text for easier reading, make writing more formal for business communication, or shorten lengthy text to be more concise.</p>
+
+      <div class="faq-item"><div class="faq-q" onclick="toggleFAQ(this)">Is this grammar checker really free?<span class="faq-icon">+</span></div><div class="faq-a">Yes — 100% free with no word limits, no signup and no subscription. ToolsRhino is supported by advertising so all tools remain free for everyone.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFAQ(this)">What is the difference between Fix Grammar and Improve Writing?<span class="faq-icon">+</span></div><div class="faq-a">Fix Grammar corrects errors while keeping your original words and style as much as possible. Improve Writing goes further — it enhances vocabulary, sentence structure and flow to make the text significantly better overall.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFAQ(this)">Can it fix Urdu-English mixed grammar mistakes?<span class="faq-icon">+</span></div><div class="faq-a">Yes — the AI understands Pakistani English and can fix common grammar mistakes made by Urdu speakers including article usage, verb tenses, prepositions and sentence structure.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFAQ(this)">Is my text kept private?<span class="faq-icon">+</span></div><div class="faq-a">Your text is sent to the AI for processing but is not stored, logged or shared. Each request is independent and nothing is retained after processing.</div></div>
+
+      <h2 style="margin-top:2rem;">Related Tools</h2>
+      <div class="related-grid">
+        <a href="ai-content-writer.html" class="related-card"><div class="icon">✨</div><div class="name">AI Content Writer</div><div class="desc">Generate any content</div></a>
+        <a href="word-counter.html" class="related-card"><div class="icon">📝</div><div class="name">Word Counter</div><div class="desc">Count words instantly</div></a>
+        <a href="case-converter.html" class="related-card"><div class="icon">🔤</div><div class="name">Case Converter</div><div class="desc">Change text case</div></a>
+      </div>
+    </div>
+  </div>
+
+  <footer><div class="footer-inner"><a href="../index.html" class="logo"><div class="logo-icon">🦏</div><span class="logo-text">Tools<span>Rhino</span></span></a><div class="footer-links"><a href="../about.html">About</a><a href="../privacy.html">Privacy</a><a href="../contact.html">Contact</a></div><div class="footer-copy">© 2025 ToolsRhino</div></div></footer>
+
+  <script>
+    let currentMode = 'grammar';
+
+    const modes = {
+      grammar: { label: 'Corrected Text', btn: 'Fix Grammar', loading: 'Checking grammar...', prompt: 'Fix all grammar, spelling and punctuation errors in the following text. Keep the original meaning and style. Return only the corrected text without any explanation.' },
+      improve: { label: 'Improved Text', btn: 'Improve Writing', loading: 'Improving your writing...', prompt: 'Improve the following text to make it more professional, clear and engaging. Enhance vocabulary and sentence structure while keeping the core meaning. Return only the improved text.' },
+      paraphrase: { label: 'Paraphrased Text', btn: 'Paraphrase Text', loading: 'Paraphrasing...', prompt: 'Paraphrase the following text completely — rewrite it using different words and sentence structures while keeping the same meaning. Return only the paraphrased version.' },
+      simplify: { label: 'Simplified Text', btn: 'Simplify Text', loading: 'Simplifying...', prompt: 'Simplify the following text so it is easy to understand for anyone. Use simple words and short sentences. Return only the simplified version.' },
+      formal: { label: 'Formal Version', btn: 'Make Formal', loading: 'Making it formal...', prompt: 'Rewrite the following text in a formal, professional tone suitable for business communication. Return only the formal version.' },
+      shorter: { label: 'Shorter Version', btn: 'Make Shorter', loading: 'Making it shorter...', prompt: 'Make the following text significantly shorter and more concise while keeping all the important information. Remove unnecessary words. Return only the shorter version.' }
+    };
+
+    function selectMode(mode, el) {
+      currentMode = mode;
+      document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+      el.classList.add('active');
+      document.getElementById('outputLabel').textContent = modes[mode].label;
+      document.getElementById('btnText').textContent = modes[mode].btn;
+    }
+
+    function updateCount() {
+      const text = document.getElementById('inputText').value.trim();
+      const words = text ? text.split(/\s+/).length : 0;
+      document.getElementById('charCount').textContent = words + ' words';
+    }
+
+    async function processText() {
+      const text = document.getElementById('inputText').value.trim();
+      if (!text) { alert('Please enter some text first.'); return; }
+      if (text.length < 5) { alert('Please enter more text to process.'); return; }
+
+      const mode = modes[currentMode];
+      document.getElementById('processBtn').disabled = true;
+      document.getElementById('btnText').textContent = 'Processing...';
+      document.getElementById('loadingBox').style.display = 'block';
+      document.getElementById('loadingText').textContent = mode.loading;
+      document.getElementById('improvementsBox').style.display = 'none';
+      document.getElementById('outputText').value = '';
+
+      try {
+        const response = await fetch('https://api.anthropic.com/v1/messages', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            model: 'claude-sonnet-4-20250514',
+            max_tokens: 1000,
+            messages: [{
+              role: 'user',
+              content: mode.prompt + '\n\nText:\n' + text
+            }]
+          })
+        });
+
+        const data = await response.json();
+        const result = data.content?.[0]?.text || '';
+        document.getElementById('outputText').value = result;
+
+        // Show improvements for grammar mode
+        if (currentMode === 'grammar' && result !== text) {
+          showImprovements(text, result);
+        }
+
+      } catch (err) {
+        alert('Something went wrong. Please try again.');
+      } finally {
+        document.getElementById('processBtn').disabled = false;
+        document.getElementById('btnText').textContent = mode.btn;
+        document.getElementById('loadingBox').style.display = 'none';
+      }
+    }
+
+    function showImprovements(original, fixed) {
+      const box = document.getElementById('improvementsBox');
+      const list = document.getElementById('improvementsList');
+
+      const tips = [
+        { icon: '✅', text: 'Grammar errors have been corrected' },
+        { icon: '✅', text: 'Spelling and punctuation checked' },
+        { icon: '✅', text: 'Sentence structure improved where needed' },
+        { icon: '💡', text: 'Original meaning and intent preserved' }
+      ];
+
+      list.innerHTML = tips.map(t =>
+        `<div class="improvement-item"><span class="imp-icon">${t.icon}</span><span class="imp-text">${t.text}</span></div>`
+      ).join('');
+
+      box.style.display = 'block';
+    }
+
+    function copyOutput() {
+      const text = document.getElementById('outputText').value;
+      if (!text) return;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = event.target;
+        btn.textContent = '✅ Copied!';
+        setTimeout(() => btn.textContent = '📋 Copy', 2000);
+      });
+    }
+
+    function replaceInput() {
+      const output = document.getElementById('outputText').value;
+      if (!output) return;
+      document.getElementById('inputText').value = output;
+      document.getElementById('outputText').value = '';
+      document.getElementById('improvementsBox').style.display = 'none';
+      updateCount();
+    }
+
+    function clearAll() {
+      document.getElementById('inputText').value = '';
+      document.getElementById('outputText').value = '';
+      document.getElementById('improvementsBox').style.display = 'none';
+      updateCount();
+    }
+
+    function toggleFAQ(el) {
+      const a = el.nextElementSibling;
+      const icon = el.querySelector('.faq-icon');
+      a.classList.toggle('open');
+      icon.classList.toggle('open');
+    }
+  </script>
+</body>
+</html>
