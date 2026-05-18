@@ -6,6 +6,7 @@
   <meta name="description" content="Free AI content writer. Generate blog posts, emails, social media captions, proposals, product descriptions and more instantly. No signup required." />
   <meta name="keywords" content="AI content writer, free AI writer, AI writing tool, AI blog writer, AI email writer, content generator free" />
   <link rel="canonical" href="https://toolsrhino.com/tools/ai-content-writer.html" />
+  <meta name="robots" content="index, follow" />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-W5NGT3NMR8"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-W5NGT3NMR8');</script>
@@ -282,6 +283,7 @@ Write the content directly without any preamble or explanation. Make it engaging
           body: JSON.stringify({
             model: 'claude-sonnet-4-20250514',
             max_tokens: 1000,
+            stream: false,
             messages: [{ role: 'user', content: prompt }]
           })
         });

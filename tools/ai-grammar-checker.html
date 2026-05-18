@@ -6,6 +6,7 @@
   <meta name="description" content="Free AI grammar checker. Fix grammar, spelling, punctuation and improve your writing instantly. Also paraphrase and simplify text. No signup required." />
   <meta name="keywords" content="grammar checker free, AI grammar checker, grammar fixer online, paraphrase tool free, text improver AI, spelling checker online" />
   <link rel="canonical" href="https://toolsrhino.com/tools/ai-grammar-checker.html" />
+  <meta name="robots" content="index, follow" />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-W5NGT3NMR8"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-W5NGT3NMR8');</script>
@@ -246,6 +247,7 @@ Example: i want to applying for this job because i have alot of experience in th
           body: JSON.stringify({
             model: 'claude-sonnet-4-20250514',
             max_tokens: 1000,
+            stream: false,
             messages: [{
               role: 'user',
               content: mode.prompt + '\n\nText:\n' + text
