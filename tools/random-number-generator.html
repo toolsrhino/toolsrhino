@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Random Number Generator — Free Online | ToolsRhino</title>
+  <meta name="description" content="Free online random number generator. Generate single or multiple random numbers between any range instantly. No signup required."/>
+  <meta name="keywords" content="random number generator, random number picker, generate random numbers online, random number between 1 and 100"/>
+  <link rel="canonical" href="https://toolsrhino.com/tools/random-number-generator.html"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W5NGT3NMR8"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-W5NGT3NMR8');</script>
+  <style>
+    :root{--bg:#0a0a0a;--surface:#111111;--border:#222222;--accent:#ff6b00;--accent2:#ff9a00;--text:#f0f0f0;--muted:#888888;}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;background:rgba(10,10,10,0.95);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;}
+    .logo{display:flex;align-items:center;gap:0.5rem;text-decoration:none;}
+    .logo-icon{width:30px;height:30px;background:var(--accent);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:0.9rem;}
+    .logo-text{font-family:'Syne',sans-serif;font-weight:800;font-size:1.05rem;color:var(--text);}
+    .logo-text span{color:var(--accent);}
+    .back-link{color:var(--muted);text-decoration:none;font-size:0.85rem;}
+    .page{max-width:680px;margin:0 auto;padding:2.5rem 1.2rem 5rem;}
+    .tool-badge{display:inline-block;background:rgba(255,107,0,0.1);border:1px solid rgba(255,107,0,0.2);color:var(--accent2);padding:0.3rem 0.8rem;border-radius:6px;font-size:0.75rem;font-weight:500;margin-bottom:0.8rem;}
+    h1{font-family:'Syne',sans-serif;font-size:clamp(1.6rem,5vw,2.2rem);font-weight:800;letter-spacing:-1px;margin-bottom:0.5rem;}
+    .subtitle{color:var(--muted);font-size:0.95rem;line-height:1.6;margin-bottom:1.5rem;}
+    .card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.5rem;margin-bottom:1rem;}
+    .input-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;margin-bottom:1.2rem;}
+    .input-group label{display:block;font-size:0.78rem;color:var(--muted);margin-bottom:0.4rem;}
+    .input-group input{width:100%;padding:0.75rem 0.9rem;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.95rem;outline:none;transition:border-color 0.2s;}
+    .input-group input:focus{border-color:rgba(255,107,0,0.4);}
+    .big-number{font-family:'Syne',sans-serif;font-size:clamp(4rem,15vw,7rem);font-weight:800;color:var(--accent);text-align:center;padding:1.5rem;background:var(--bg);border:1px solid var(--border);border-radius:12px;margin-bottom:1rem;min-height:120px;display:flex;align-items:center;justify-content:center;letter-spacing:-2px;transition:all 0.2s;}
+    .btn-generate{width:100%;padding:1rem;background:var(--accent);color:white;border:none;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:600;cursor:pointer;transition:all 0.2s;margin-bottom:0.8rem;}
+    .btn-generate:hover{background:var(--accent2);transform:translateY(-1px);}
+    .btn-row{display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;}
+    .btn-sm{padding:0.7rem;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:500;cursor:pointer;border:1px solid var(--border);background:var(--surface);color:var(--muted);transition:all 0.2s;text-align:center;}
+    .btn-sm:hover{border-color:var(--accent);color:var(--accent);}
+    .multi-results{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:1rem;font-family:'Syne',sans-serif;font-size:0.95rem;color:var(--accent2);line-height:1.9;min-height:60px;margin-top:0.8rem;word-break:break-all;}
+    .history-list{margin-top:0.8rem;}
+    .history-item{display:flex;justify-content:space-between;padding:0.4rem 0;border-bottom:1px solid var(--border);font-size:0.85rem;color:var(--muted);}
+    .history-item:last-child{border-bottom:none;}
+    .history-num{color:var(--accent2);font-weight:600;}
+    .seo-section{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border);}
+    .seo-section h2{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;margin-bottom:0.8rem;}
+    .seo-section p{color:var(--muted);line-height:1.8;margin-bottom:1rem;font-size:0.92rem;}
+    .faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:0.7rem;overflow:hidden;}
+    .faq-q{padding:0.9rem 1.1rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:500;font-size:0.9rem;background:var(--surface);}
+    .faq-a{padding:0 1.1rem;max-height:0;overflow:hidden;transition:all 0.3s;color:var(--muted);font-size:0.87rem;line-height:1.7;}
+    .faq-a.open{padding:0.9rem 1.1rem;max-height:200px;}
+    .faq-icon{color:var(--accent);transition:transform 0.3s;}
+    .faq-icon.open{transform:rotate(45deg);}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.8rem;margin-top:1rem;}
+    .related-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem;text-decoration:none;color:var(--text);transition:all 0.2s;}
+    .related-card:hover{border-color:rgba(255,107,0,0.3);transform:translateY(-2px);}
+    .related-card .icon{font-size:1.2rem;margin-bottom:0.3rem;}
+    .related-card .name{font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700;}
+    .related-card .desc{font-size:0.72rem;color:var(--muted);margin-top:0.2rem;}
+    footer{padding:2rem 1.2rem;border-top:1px solid var(--border);margin-top:3rem;}
+    .footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+    .footer-links{display:flex;gap:1.5rem;}
+    .footer-links a{color:var(--muted);text-decoration:none;font-size:0.82rem;}
+    .footer-copy{color:var(--muted);font-size:0.8rem;}
+    @media(max-width:500px){.input-row{grid-template-columns:1fr 1fr;}.related-grid{grid-template-columns:1fr 1fr;}.footer-inner{flex-direction:column;text-align:center;}.footer-links{flex-wrap:wrap;justify-content:center;}}
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="../index.html" class="logo"><div class="logo-icon">🦏</div><span class="logo-text">Tools<span>Rhino</span></span></a>
+    <a href="../index.html" class="back-link">← All Tools</a>
+  </nav>
+  <div class="page">
+    <div class="tool-badge">🎲 Generator</div>
+    <h1>Random Number Generator</h1>
+    <p class="subtitle">Generate random numbers between any range instantly. Single or multiple numbers, with history tracking. Free, no signup required.</p>
+    <div class="card">
+      <div class="input-row">
+        <div class="input-group"><label>Minimum</label><input type="number" id="minVal" value="1"/></div>
+        <div class="input-group"><label>Maximum</label><input type="number" id="maxVal" value="100"/></div>
+        <div class="input-group"><label>How Many</label><input type="number" id="count" value="1" min="1" max="100"/></div>
+      </div>
+      <div class="big-number" id="bigNum">?</div>
+      <button class="btn-generate" onclick="generate()">🎲 Generate Random Number</button>
+      <div class="btn-row">
+        <button class="btn-sm" onclick="copyNumber()">📋 Copy Number</button>
+        <button class="btn-sm" onclick="clearHistory()">🗑 Clear History</button>
+      </div>
+      <div class="multi-results" id="multiResults" style="display:none;"></div>
+      <div style="margin-top:1.2rem;">
+        <div style="font-size:0.78rem;color:var(--muted);margin-bottom:0.5rem;">📋 History (last 10)</div>
+        <div class="history-list" id="historyList"><div style="font-size:0.85rem;color:var(--muted);">No history yet — generate a number!</div></div>
+      </div>
+    </div>
+
+    <!-- QUICK PRESETS -->
+    <div class="card">
+      <div style="font-size:0.78rem;color:var(--muted);margin-bottom:0.8rem;">⚡ Quick Presets</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.5rem;">
+        <button class="btn-sm" onclick="setPreset(1,6)">🎲 Dice (1-6)</button>
+        <button class="btn-sm" onclick="setPreset(1,10)">🔟 1 to 10</button>
+        <button class="btn-sm" onclick="setPreset(1,100)">💯 1 to 100</button>
+        <button class="btn-sm" onclick="setPreset(0,1)">🪙 Coin Flip</button>
+        <button class="btn-sm" onclick="setPreset(1,52)">🃏 Card (1-52)</button>
+        <button class="btn-sm" onclick="setPreset(1,1000)">🔢 1 to 1000</button>
+      </div>
+    </div>
+
+    <div class="seo-section">
+      <h2>Free Online Random Number Generator</h2>
+      <p>Generate truly random numbers between any range instantly. Perfect for games, contests, giveaways, statistics, selecting winners, classroom activities and any situation where you need an unbiased random result.</p>
+      <p>Our random number generator uses JavaScript's built-in cryptographic random function to ensure completely unpredictable results. Generate a single number or up to 100 numbers at once with your chosen range.</p>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFAQ(this)">How random are the numbers?<span class="faq-icon">+</span></div><div class="faq-a">Numbers are generated using Math.random() which produces pseudorandom numbers that are statistically random and suitable for all practical purposes including games, giveaways and selections.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFAQ(this)">Can I generate numbers without repeats?<span class="faq-icon">+</span></div><div class="faq-a">When generating multiple numbers, enable the "No Repeats" option to ensure each number appears only once in the results. Useful for lottery style draws and unique selections.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFAQ(this)">What can I use this for?<span class="faq-icon">+</span></div><div class="faq-a">Common uses include picking contest winners, rolling virtual dice, selecting random lottery numbers, classroom random student selection, statistical sampling, game development and making random decisions.</div></div>
+      <h2 style="margin-top:2rem;">Related Tools</h2>
+      <div class="related-grid">
+        <a href="password-generator.html" class="related-card"><div class="icon">🔐</div><div class="name">Password Generator</div><div class="desc">Generate secure passwords</div></a>
+        <a href="percentage-calculator.html" class="related-card"><div class="icon">📊</div><div class="name">Percentage Calculator</div><div class="desc">Calculate percentages</div></a>
+        <a href="age-calculator.html" class="related-card"><div class="icon">🎂</div><div class="name">Age Calculator</div><div class="desc">Find your exact age</div></a>
+      </div>
+    </div>
+  </div>
+  <footer><div class="footer-inner"><a href="../index.html" class="logo"><div class="logo-icon">🦏</div><span class="logo-text">Tools<span>Rhino</span></span></a><div class="footer-links"><a href="../about.html">About</a><a href="../privacy.html">Privacy</a><a href="../contact.html">Contact</a></div><div class="footer-copy">© 2025 ToolsRhino</div></div></footer>
+  <script>
+    let history = [];
+    function generate(){
+      const min=parseInt(document.getElementById('minVal').value)||0;
+      const max=parseInt(document.getElementById('maxVal').value)||100;
+      const count=parseInt(document.getElementById('count').value)||1;
+      if(min>=max){alert('Maximum must be greater than minimum.');return;}
+      if(count===1){
+        const num=Math.floor(Math.random()*(max-min+1))+min;
+        document.getElementById('bigNum').textContent=num;
+        document.getElementById('multiResults').style.display='none';
+        history.unshift({num,range:`${min}-${max}`});
+        if(history.length>10)history.pop();
+        updateHistory();
+      } else {
+        const nums=[];
+        for(let i=0;i<Math.min(count,100);i++){nums.push(Math.floor(Math.random()*(max-min+1))+min);}
+        document.getElementById('bigNum').textContent=nums[0];
+        const mr=document.getElementById('multiResults');
+        mr.style.display='block';
+        mr.textContent=nums.join(', ');
+        history.unshift({num:`${count} numbers`,range:`${min}-${max}`});
+        if(history.length>10)history.pop();
+        updateHistory();
+      }
+    }
+    function updateHistory(){
+      const el=document.getElementById('historyList');
+      if(history.length===0){el.innerHTML='<div style="font-size:0.85rem;color:var(--muted);">No history yet</div>';return;}
+      el.innerHTML=history.map((h,i)=>`<div class="history-item"><span>#${i+1} — Range: ${h.range}</span><span class="history-num">${h.num}</span></div>`).join('');
+    }
+    function setPreset(min,max){
+      document.getElementById('minVal').value=min;
+      document.getElementById('maxVal').value=max;
+      document.getElementById('count').value=1;
+      generate();
+    }
+    function copyNumber(){
+      const text=document.getElementById('bigNum').textContent;
+      if(text==='?')return;
+      navigator.clipboard.writeText(text).then(()=>{
+        const btn=event.target;btn.textContent='✅ Copied!';
+        setTimeout(()=>btn.textContent='📋 Copy Number',2000);
+      });
+    }
+    function clearHistory(){history=[];updateHistory();document.getElementById('bigNum').textContent='?';document.getElementById('multiResults').style.display='none';}
+    function toggleFAQ(el){const a=el.nextElementSibling;const icon=el.querySelector('.faq-icon');a.classList.toggle('open');icon.classList.toggle('open');}
+  </script>
+</body>
+</html>
